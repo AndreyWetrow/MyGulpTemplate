@@ -1,0 +1,2 @@
+# MyGulpTemplate
+Gulp template
