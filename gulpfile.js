@@ -24,8 +24,8 @@ const cleanCSS = require('gulp-clean-css');
 const sourcemaps = require('gulp-sourcemaps');
 const gulpif = require('gulp-if');
 var gcmq = require('gulp-group-css-media-queries');
-const uglify = require('gulp-uglify');
-const less = require('gulp-less');
+const uglify = require('gulp-uglify'); 
+var sass = require('gulp-sass');
 const smartgrid = require('smart-grid');
 //Конец Smartgrid
 const cheerio = require('gulp-cheerio');
@@ -53,7 +53,7 @@ const isProd = !isDev;
 const isSync = (process.argv.indexOf('--sync') !== -1);
 
 // let cssFiles = [
-//   './node_modules/normalize.css/normalize.css',
+  // './node_modules/normalize.css/normalize.css',
 //   './src/css/base.css',
 //   './src/css/other.css',
 //   './src/css/styles.css'
@@ -62,12 +62,12 @@ const isSync = (process.argv.indexOf('--sync') !== -1);
 let jsFiles = [
   './src/libs/jquery/jquery.min.js',
   './src/libs/slick-carousel/slick/slick.min.js',
-  './src/libs/simplebar/packages/simplebar/src/simplebar.min.js',
-  './src/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
-  './src/libs/jqueryValidation/jquery.validate.min.js',
-  './src/libs/maskedinput/maskedinput.js',
-  './src/libs/noUiSlider/nouislider.min.js',
-  './src/libs/wNumb/wNumb.min.js',
+  // './src/libs/simplebar/packages/simplebar/src/simplebar.min.js',
+  // './src/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
+  // './src/libs/jqueryValidation/jquery.validate.min.js',
+  // './src/libs/maskedinput/maskedinput.js',
+  // './src/libs/noUiSlider/nouislider.min.js',
+  // './src/libs/wNumb/wNumb.min.js',
   // './src/libs/jquery-mmenu/jquery.mmenu.min.all.js', 
   // './src/libs/menuStyleSlider/js/index.js', 
   // './src/libs/OwlCarousel/OwlCarousel2-2.3.4/dist/owl.carousel.min.js', 
@@ -82,9 +82,9 @@ function clear() {
 } 
 
 function styles() {
-  return gulp.src('./src/less/style.less')
+  return gulp.src('./src/scss/style.scss')
     .pipe(gulpif(isDev, sourcemaps.init()))
-    .pipe(less())
+    .pipe(sass())
     // .pipe(concat('styles.css'))
     // .on('error', console.error.bind(console))
 
@@ -113,11 +113,11 @@ function scripts() {
     .pipe(gulpif(isSync, browserSync.stream()))
 }
 
-function allimg() {
-  return gulp.src('./src/img/**/*.{png, jpg}')
-    .pipe(gulp.dest('./build/img'))
-    .pipe(gulpif(isSync, browserSync.stream()))
-}
+// function allimg() {
+//   return gulp.src('./src/img/**/*.{png, jpg}')
+//     .pipe(gulp.dest('./build/img'))
+//     .pipe(gulpif(isSync, browserSync.stream()))
+// }
 
 
 function images() {
@@ -132,7 +132,7 @@ function images() {
 }
 
 function svg() {
-  return gulp.src('./src/img/**/*.svg')
+  return gulp.src('./src/img/sprite/**/*.svg')
     .pipe(svgmin({
       js2svg: {
         pretty: true
@@ -151,12 +151,18 @@ function svg() {
     .pipe(svgSprite({
       mode: {
         symbol: {
-          sprite: "sprite.svg"
+          sprite: "sprite.svg" 
         }
       }
     })) 
-    .pipe(gulp.dest('./build/img'))
+    .pipe(gulp.dest('./build/img/'))
 };
+
+function totalSvg() {
+  return gulp.src('./src/img/totalSvg/**/*.svg')
+    .pipe(gulp.dest('./build/img'))
+    .pipe(gulpif(isSync, browserSync.stream()))
+}
 
 function html() {
   return gulp.src('./src/*.html')
@@ -172,43 +178,34 @@ function htmlPug() {
     }))
     .pipe(gulp.dest("./build"))
     .pipe(gulpif(isSync, browserSync.stream()));
+} 
+
+function clearFonts() {
+  return del('./build/fonts');
+}
+function fonts() {
+  return gulp
+    .src("./src/fonts/copyFonts/**/*")
+    .pipe(gulp.dest("./build/fonts"))
+    .pipe(gulpif(isSync, browserSync.stream()));
 }
 
-// function copyFonts() {
-//   return gulp.src('./src/fonts/copyFonts/**/*')
-//     .pipe(gulp.dest('./build/fonts'))
-//     .pipe(gulpif(isSync, browserSync.stream()));
+// function clearCopyResources() {
+//   return del([
+//     './build/fonts',
+//     './build/img/**/*.svg',
+//     './build/*.php'
+//   ]);
 // }
 
-// function copysvg() {
-//   return gulp.src('./src/img/**/*.svg')
-//     .pipe(gulp.dest('./build/img'))
-//     .pipe(gulpif(isSync, browserSync.stream()))
-// }
-
-// function copyPhp() {
-//   return gulp.src('./src/*.php')
-//     .pipe(gulp.dest('./build/'))
-//     .pipe(gulpif(isSync, browserSync.stream()))
-// } 
-
-function clearCopyResources() {
-  return del([
-    './build/fonts',
-    './build/img/**/*.svg',
-    './build/*.php'
-  ]);
-}
-
-function copyResources() {
-  return merge([
-      gulp.src('./src/fonts/copyFonts/**/*').pipe(gulp.dest('./build/fonts')),
-      gulp.src('./src/img/**/*.svg').pipe(gulp.dest('./build/img')),
-      gulp.src('./src/img/**/*.gif').pipe(gulp.dest('./build/img')),
-      gulp.src('./src/*.php').pipe(gulp.dest('./build/'))
-  ])
-  .pipe(gulpif(isSync, browserSync.stream()));
-};
+// function copyResources() {
+//   return merge([
+//       gulp.src('./src/img/**/*.svg').pipe(gulp.dest('./build/img')),
+//       gulp.src('./src/img/**/*.gif').pipe(gulp.dest('./build/img')),
+//       gulp.src('./src/*.php').pipe(gulp.dest('./build/'))
+//   ])
+//   .pipe(gulpif(isSync, browserSync.stream()));
+// };
 
 function watch() {
   if (isSync) {
@@ -218,24 +215,26 @@ function watch() {
       }
     });
   }
-  gulp.watch('./src/less/**/*.less', styles);
+  gulp.watch('./src/scss/**/*.scss', styles);
   gulp.watch('./src/libs/**/*', gulp.parallel(styles, scripts));
   gulp.watch('./src/**/*.html', html);
   gulp.watch("./src/**/*.pug", htmlPug);
   gulp.watch('./src/js/**/*.js', scripts);
-  // gulp.watch('./src/img/**/*.{png,jpg}', allimg);
   gulp.watch('./src/img/**/*.{png,jpg}', images);
-  // gulp.watch('./src/img/**/*.svg', svg);
-  gulp.watch('./src/img/**/*.svg', gulp.series(clearCopyResources, copyResources, svg));
-  gulp.watch('./src/*.php', gulp.series(clearCopyResources, copyResources));
-  gulp.watch('./src/fonts/**/*', gulp.series(clearCopyResources, copyResources));
+  gulp.watch('./src/img/sprite/*.svg', svg);
+  gulp.watch('./src/img/totalSvg/**/*.svg', totalSvg);
+  gulp.watch('./src/fonts/**/*', gulp.series(clearFonts, fonts));
+  // gulp.watch('./src/img/**/*.{png,jpg}', allimg);
+  // gulp.watch('./src/img/**/*.svg', gulp.series(clearCopyResources, copyResources, svg));
+  // gulp.watch('./src/*.php', gulp.series(clearCopyResources, copyResources));
+  // gulp.watch('./src/fonts/**/*', gulp.series(clearCopyResources, copyResources));
   gulp.watch('./smartgrid.js', grid);
 }
 
 function grid(done) {
   delete require.cache[require.resolve('./smartgrid.js')];
   let settings = require('./smartgrid.js');
-  smartgrid('./src/less', settings);
+  smartgrid('./src/scss', settings);
 
   // settings.offset = '3.1%';
   // settings.filename = 'smart-grid-per';
@@ -245,7 +244,7 @@ function grid(done) {
 
 let build = gulp.series(
   clear,
-  gulp.parallel(htmlPug, styles, scripts, images, svg, copyResources)
+  gulp.parallel(htmlPug, styles, scripts, images, svg, fonts)
 );
 
 gulp.task('build', gulp.series(grid, build));

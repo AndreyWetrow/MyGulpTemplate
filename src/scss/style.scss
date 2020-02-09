@@ -1,16 +1,18 @@
-@charset "UTF-8";
+@charset "UTF-8"; 
 // @import "smart-grid.less";
 
 // .reset();
 
 
-// @import "core.less";
+@import "../../node_modules/normalize.css/normalize";
+@import "core";
+@import "libs";
 // @import "variables.less";
 // @import "mixins.less";
 // @import "fonts.less";
-// @import "libs.less";
 
-// @import "modules/header/header.less"; 
+@import "modules/header/header"; 
+@import "modules/small-blocks/small-blocks"; 
 // @import "modules/basket/basket"; 
 
 // @import "modules/about/about";  

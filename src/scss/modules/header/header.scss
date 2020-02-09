@@ -1,0 +1,23 @@
+.header__slider {
+  &-item {
+    position: relative;
+    height: 100vh;
+    background-image: url("../img/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.slider-item {
+  &__info {
+    position: absolute;
+    right: 80px;
+    bottom: 116px;
+  }
+  &__icon {
+    fill: white;
+    width: 24px;
+    height: 20px;
+  }
+}
