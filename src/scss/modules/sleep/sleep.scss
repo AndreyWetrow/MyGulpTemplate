@@ -1,0 +1,14 @@
+.descr__head {
+  .holder__star-list {
+    
+    img {
+      margin-left: 0; 
+    }
+
+    // &>* { 
+    //   &:not(:last-child) {
+    //     margin-right: -21px; 
+    //   }
+    // }
+  }
+}

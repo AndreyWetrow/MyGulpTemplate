@@ -62,6 +62,7 @@ const isSync = (process.argv.indexOf('--sync') !== -1);
 let jsFiles = [
   './src/libs/jquery/jquery.min.js',
   './src/libs/slick-carousel/slick/slick.min.js',
+  './node_modules/wow.js/dist/wow.min.js',
   // './src/libs/simplebar/packages/simplebar/src/simplebar.min.js',
   // './src/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
   // './src/libs/jqueryValidation/jquery.validate.min.js',
@@ -244,7 +245,7 @@ function grid(done) {
 
 let build = gulp.series(
   clear,
-  gulp.parallel(htmlPug, styles, scripts, images, svg, fonts)
+  gulp.parallel(htmlPug, styles, scripts, images, svg, totalSvg, fonts)
 );
 
 gulp.task('build', gulp.series(grid, build));

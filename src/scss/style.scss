@@ -7,12 +7,18 @@
 @import "../../node_modules/normalize.css/normalize";
 @import "core";
 @import "libs";
-// @import "variables.less";
+@import "variables";
 // @import "mixins.less";
 // @import "fonts.less";
 
 @import "modules/header/header"; 
+@import "modules/footer/footer"; 
+@import "modules/sleep/sleep"; 
 @import "modules/small-blocks/small-blocks"; 
+@import "modules/slider/slider"; 
+@import "modules/surf/surf"; 
+@import "modules/shop/shop"; 
+@import "modules/travel/travel"; 
 // @import "modules/basket/basket"; 
 
 // @import "modules/about/about";  

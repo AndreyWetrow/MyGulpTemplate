@@ -3,7 +3,27 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: hidden; 
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: white;
+  background-color: #171919;
+  text-transform: uppercase;
+  min-width: 320px;
+}
+.surf, .holder, .shop {
+  padding: 45px 0 120px;
+  @media screen and (max-width: 1200px) {
+    padding: 70px 0 50px;
+  }
+}
+
+.holder {
+  padding-bottom: 265px;
 }
 
 // html {
@@ -45,28 +65,28 @@ html, body {
 //   margin: 0;
 // }
 
-// *, *::before, *::after {
-//   box-sizing: border-box;
-//   outline:none;
-// }
+*, *::before, *::after {
+  box-sizing: border-box;
+  outline:none;
+}
  
-// img {
-//   display: block;
-//   max-width: 100%;
-//   height: auto;
-// }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
-// a {
-//   // display: inline-block;
-//   text-decoration: none;
-//   color: @base-text-color;
-// }
+a {
+  // display: inline-block;
+  text-decoration: none;
+  color:white;
+}
 
-// ul, li {
-//   margin: 0;
-//   padding: 0;
-//   list-style: none;
-// }
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
 // p {
 //   margin: 0;
@@ -118,15 +138,13 @@ html, body {
 // // .container {
 // //   .min-max(320px, 1920px, 15px);
 // // }
-// .container {
-//   max-width: @content-size;
-//   margin: 0 auto;
-//   padding: 0 80px;
-//   width: 100%;
-//   @media screen and (max-width: @tablet-size) {
-//     padding: 0 20px;
-//   }
-// }
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 0px;
+  width: 100%;
+  overflow: hidden;
+}
 // // .container {
 // //   .container();
 // // }
