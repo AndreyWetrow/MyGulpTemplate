@@ -1,12 +1,15 @@
 // Main
-@content-size: 1240px;
-@tablet-size: 1239px;
-@phone-size: 767px;
+$content-size: 1240px;
+$tablet-size: 1239px;
+$phone-size: 767px;
 
 ///////////////////////////////////////////////////////////
 
 //Colors
-$green:#4AF6CD;
+$font-color:#58585a;
+$main-orange:#f58345;
+
+// $green:#4AF6CD;
 // @main-bg-color: #f2f2f2;
 // @dark-bg-color: #003333;
 // @slider-dots-bg-color: #dedede;

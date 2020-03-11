@@ -39,6 +39,7 @@
     "merge-stream": "^2.0.0",
     "node-sass": "^4.13.1",
     "normalize.css": "^8.0.1",
+    "simplebar": "^5.1.0",
     "smart-grid": "^2.1.2",
     "wow.js": "^1.2.2"
   }

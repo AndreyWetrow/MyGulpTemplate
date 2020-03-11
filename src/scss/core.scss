@@ -1,29 +1,27 @@
- 
-  // // Основные стили 
-html, body {
+// Основные стили 
+html,
+body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 body {
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'Rubik', serif;
   font-weight: 400;
   font-size: 16px;
-  color: white;
-  background-color: #171919;
-  text-transform: uppercase;
+  color: $font-color; 
+  background-color: #ffffff;
   min-width: 320px;
 }
-.surf, .holder, .shop {
-  padding: 45px 0 120px;
-  @media screen and (max-width: 1200px) {
-    padding: 70px 0 50px;
-  }
-}
 
-.holder {
-  padding-bottom: 265px;
+//Classes
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 0px;
+  width: 100%;
+  overflow: hidden;
 }
 
 // html {
@@ -65,11 +63,13 @@ body {
 //   margin: 0;
 // }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  outline:none;
+  outline: none;
 }
- 
+
 img {
   display: block;
   max-width: 100%;
@@ -79,10 +79,11 @@ img {
 a {
   // display: inline-block;
   text-decoration: none;
-  color:white;
+  // color:white;
 }
 
-ul, li {
+ul,
+li {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -138,13 +139,7 @@ ul, li {
 // // .container {
 // //   .min-max(320px, 1920px, 15px);
 // // }
-.container {
-  max-width: 1920px;
-  margin: 0 auto;
-  padding: 0 0px;
-  width: 100%;
-  overflow: hidden;
-}
+
 // // .container {
 // //   .container();
 // // }
@@ -187,5 +182,3 @@ ul, li {
 //   background-color: rgba(#000, 0.8);
 //   display: none; 
 // }
-
- 

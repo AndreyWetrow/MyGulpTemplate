@@ -8,8 +8,9 @@
 
 // npm i jquery-validation
 
-//Перед иницииализацией ncu (просто проверка package.json на обновления), если есть что обновлять тогда ncu -u
-//npm i -g npm-check-updates - терминал выдаст сам если есть обновления npm
+//npm i -g npm-check-updates - С помощью npm-check-updates можно узнать какие зависимости обновились с момента их установки с помощью npm/bower.
+//Потом, перед иницииализацией - ncu (просто проверка package.json на обновления), если есть что обновлять тогда ncu -u
+
 //Инициализация проекта: npm i
 //Для запуска скрипта из package.json: npm run (Имя скрипта)
 //Для сжатия картинок лучше использовать сайт https://tinypng.com/
@@ -61,10 +62,11 @@ const isSync = (process.argv.indexOf('--sync') !== -1);
 
 let jsFiles = [
   './src/libs/jquery/jquery.min.js',
-  './src/libs/slick-carousel/slick/slick.min.js',
-  './node_modules/wow.js/dist/wow.min.js',
+  './src/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
+  'node_modules/simplebar/dist/simplebar.min.js',
+  // './src/libs/slick-carousel/slick/slick.min.js',
+  // './node_modules/wow.js/dist/wow.min.js',
   // './src/libs/simplebar/packages/simplebar/src/simplebar.min.js',
-  // './src/libs/magnific-popup/dist/jquery.magnific-popup.min.js',
   // './src/libs/jqueryValidation/jquery.validate.min.js',
   // './src/libs/maskedinput/maskedinput.js',
   // './src/libs/noUiSlider/nouislider.min.js',

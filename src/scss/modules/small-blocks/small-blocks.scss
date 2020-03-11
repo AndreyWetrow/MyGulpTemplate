@@ -1,24 +1,24 @@
 @import "btn";
-@import "descr";
-@import "custom";
-@import "preloader";
-@import "subtitle";
-@import "title";
+@import "title-section";
+// @import "descr";
+// @import "custom";
+// @import "preloader";
+// @import "subtitle";
 
-.holder__star-list {
-  margin-left: 15px;
+// .holder__star-list {
+//   margin-left: 15px;
 
-  @media screen and (max-width: 420px) {
-    margin-left: -15px;
-  }
-}
+//   @media screen and (max-width: 420px) {
+//     margin-left: -15px;
+//   }
+// }
 
-.star-list {
-  display: flex;
+// .star-list {
+//   display: flex;
 
-  &>* {
-    &:not(:last-child) {
-      margin-right: -21px;
-    }
-  }
-}
+//   &>* {
+//     &:not(:last-child) {
+//       margin-right: -21px;
+//     }
+//   }
+// }

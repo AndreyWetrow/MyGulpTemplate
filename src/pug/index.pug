@@ -1,13 +1,16 @@
 extends template/main 
 
 block variables
-  - var title = 'Surf';
+  - var title = 'ruler';
   - var pageClass = 'index-page';
 
 block content
-  include modules/surf/surf
-  include modules/footer/footer
+  include modules/causes/causes
+  include modules/works/works
+  include modules/discount/discount
+  include modules/how/how
   //- include pages/index/popular-categories
+  //- include modules/footer/footer
   //- include pages/index/advantages
   //- include pages/index/actions
   //- include pages/index/discount
