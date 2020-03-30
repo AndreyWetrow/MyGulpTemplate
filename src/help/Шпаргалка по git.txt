@@ -2,7 +2,15 @@ https://github.com/AndreyWetrow/ItDoctor
 1. git config --list - покажет глобальную конфигурацию с алиасами
 
 2. git remote add origin git@github.com:AndreyWetrow/ItDoctor.git
-   git push -u origin master (добавление файлов в новый репозиторий) 
+   git push -u origin master (добавление файлов в новый репозиторий)
+
+   или позднее 
+   ($ echo "# simmetria" >> README.md
+   git add README.md
+   git commit -m "first commit"
+   git remote add origin https://github.com/AndreyWetrow/simmetria.git
+   git push -u origin master
+   ) 
 
 3. git clone - клонирование репозитория с сети
 

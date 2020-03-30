@@ -1,0 +1,37 @@
+footer.s-footer
+  .container
+    .footer
+      .footer__line.footer-top
+        .footer-top__logo.logo
+          a(href="index.html") device
+        .footer-top__nav.u-nav__item
+          a(href="#").u-nav__enter Войти
+            +icon('user','u-nav__enter-icon')
+          a(href="#").u-nav__compare Сравнить
+            +icon('compare','u-nav__compare-icon')
+          a(href="#").u-nav__backet Корзина
+            +icon('cart','u-nav__backet-icon')
+      .footer__line.footer-middle
+        .footer-middle__adress г. Москва, ул. Строителей, 15
+        ul.footer-middle__list
+          li.footer-middle__item
+            a(href="#") Доставка
+          li.footer-middle__item
+            a(href="#") Гарантия
+          li.footer-middle__item
+            a(href="#") Контакты
+        .footer-middle__tel Тел.: +7 (495) 495-95-95
+      .footer__line.footer-bottom
+        .footer-bottom__line
+        ul.footer-bottom__social
+          li.footer-bottom__icon
+            a(href="#") 
+              +icon("fb", "footer-bottom-icon")
+          li.footer-bottom__icon
+            a(href="#")
+              +icon("twitter", "footer-bottom-icon")
+          li.footer-bottom__icon
+            a(href="#")
+              +icon("vk", "footer-bottom-icon")
+        .footer-bottom__logo
+          +icon("logo-html", "footer-bottom-logo")

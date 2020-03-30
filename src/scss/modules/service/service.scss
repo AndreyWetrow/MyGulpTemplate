@@ -1,0 +1,15 @@
+.s-servises {
+  margin-bottom: 70px;
+  background-color: white;
+}
+.servises {
+  display: flex;
+  margin-left: -20px;
+  margin-right: -20px;
+
+  &__item {
+    width: calc(25% - 40px);
+    margin: 0 20px;
+    opacity: .20;
+  }
+}

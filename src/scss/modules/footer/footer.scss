@@ -1,25 +1,135 @@
+.s-footer {
+  background-color: #464646;
+}
+
 .footer {
-  text-align: center;
-  padding: 285px 0 34px;
-  @media screen and (max-width: 680px) {
-    padding-top: 100px;
+  padding: 65px 0;
+}
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 35px;
+
+  &__logo {
+    a {
+      color: #ffc600;
+    }
+
   }
 
-  &__copy {
-    padding-top: 27px;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 1.05px;
-  }
+  &__nav {
+    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
+    width: auto;
 
-  .btn {
-    span {
-      padding: 17px 17px 15px;
-
-      &::after {
-        display: none;
+    &>* {
+      &:not(:last-child) {
+        margin-right: 40px;
+        margin-left: 0;
       }
     }
+
+    a {
+      color: white;
+      font-family: "opensans-light";
+
+      font-size: 15px;
+      line-height: 36px;
+      letter-spacing: .15px;
+    }
+
+    svg {
+      fill: #ffc600;
+    }
+  }
+}
+
+.footer-middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 65px;
+
+  &__list {
+    display: flex;
+
+    &>* {
+      &:not(:last-child) {
+        margin-right: 35px;
+      }
+    }
+  }
+
+  a {
+    font-family: "gilroy-extrabold";
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: .36px;
+  }
+
+  &__tel {
+    font-size: 15px;
+    line-height: 30px;
+    font-family: "opensans-light";
+  }
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__icon {
+    &:hover {
+      svg {
+        fill: #b5b5b5; 
+      } 
+    }
+    &:active {
+      svg {
+        fill: #595959; 
+      } 
+    }
+  }
+
+  &__line {
+    width: 80px;
+    height: 7px;
+    background-color: #ffc600;
+  }
+
+  &__social {
+    display: flex;
+
+    &>* {
+      &:not(:last-child) {
+        margin-right: 23px;
+      }
+    }
+
+
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+    fill: #7e7e7e;
+  }
+
+  &__logo {
+    width: 27px;
+    height: 35px;
+
+    svg {
+      fill: #ffc600;
+      width: 100%;
+      height: 100%;
+    }
+
   }
 }

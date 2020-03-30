@@ -1,0 +1,114 @@
+.s-position {
+  margin-bottom: 90px;
+}
+
+.position {
+  display: flex;
+  margin: 0 -20px;
+
+  &__item {
+    margin: 0 20px;
+    width: calc(50% - 40px);
+    display: flex;
+    flex-direction: column; 
+  }
+
+  &__title {
+    position: relative;
+    font-family: "gilroy-extrabold";
+    font-size: 47px;
+    line-height: 1;
+    letter-spacing: .47px;
+    color: black;
+    padding: 55px 0;
+
+    &::before {
+      position: absolute;
+      content: "";
+      display: block;
+      left: 0;
+      top: 0;
+      width: 80px;
+      height: 7px;
+      background-color: black;
+    }
+  }
+
+  p {
+    color: #464646;
+    font-size: 15px;
+    line-height: 30px;
+    font-family: "opensans-light";
+    margin-bottom: 45px;
+    margin-top: 0;
+  }
+}
+
+.about {
+  &__list {
+    margin-bottom: 80px;
+
+
+    &>* {
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+
+    &-item {
+      position: relative;
+      padding-left: 33px;
+      font-size: 16px;
+      color: black;
+      font-family: "gilroy-extrabold";
+
+      &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        border-radius: 50%;
+        width: 8px;
+        height: 8px;
+        border: 2px solid #e6e6e6;
+        left: 1px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: auto;
+    &.conditions__title {
+      max-width: 260px;
+      color: black;
+
+      .yellow-line {
+        max-width: 100%;
+      }
+    }
+
+  }
+}
+
+.contacts {
+  &__map {
+    height: 222px;
+    width: 100%; 
+    background-image: url('../img/map.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+  &__footer {
+    margin-top: auto;
+    &.conditions__title {
+      max-width: 260px;
+      color: black;
+
+      .yellow-line {
+        max-width: 100%;
+      }
+    }
+
+  }
+}

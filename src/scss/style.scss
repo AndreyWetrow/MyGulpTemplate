@@ -5,21 +5,22 @@
 
 
 @import "../../node_modules/normalize.css/normalize";
+@import "fonts.scss";
 @import "variables";
 @import "core";
 @import "libs";
 // @import "mixins.less";
-// @import "fonts.less";
 
 @import "modules/header/header"; 
-@import "modules/discount/discount"; 
-@import "modules/how/how"; 
-@import "modules/causes/causes"; 
-@import "modules/form/form"; 
-@import "modules/small-blocks/small-blocks"; 
+@import "modules/info/info"; 
+@import "modules/footer/footer"; 
+@import "modules/goods/goods"; 
+@import "modules/conditions/conditions"; 
 @import "modules/popups/popups"; 
-@import "modules/works/works"; 
-// @import "modules/footer/footer"; 
+@import "modules/small-blocks/small-blocks"; 
+@import "modules/service/service"; 
+// @import "modules/form/form"; 
+// @import "modules/works/works"; 
 // @import "modules/slider/slider"; 
 // @import "modules/surf/surf"; 
 // @import "modules/shop/shop"; 

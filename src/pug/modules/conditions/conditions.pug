@@ -1,0 +1,36 @@
+section.s-conditions
+  .insert
+  .container.conditions__wrapper
+    .conditions
+      .conditions__list 
+        .conditions__list-item.conditions__list-item--active(show-tab="tab-delivery")
+          .conditions__title
+            span Доставка
+            .yellow-line
+        .conditions__list-item(show-tab="tab-warranty") 
+          .conditions__title
+            span Гарантия
+            .yellow-line 
+        .conditions__list-item(show-tab="tab-credit") 
+          .conditions__title
+            span Кредит
+            .yellow-line 
+      .conditions__content
+        .conditions__content__block.tabs-content.tab-delivery.tab--active
+          .conditions__content-item
+            .conditions__header Доставка
+            .conditions__text Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.
+          .conditions__content-img
+            img(src='img/delivery.svg' alt='Доставка').conditions__content-img--1
+        .conditions__content__block.tabs-content.tab-warranty
+          .conditions__content-item
+            .conditions__header Гарантия
+            .conditions__text Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.
+          .conditions__content-img
+            img(src='img/warranty.svg' alt='Гарантия').conditions__content-img--2
+        .conditions__content__block.tabs-content.tab-credit
+          .conditions__content-item
+            .conditions__header Кредит
+            .conditions__text Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для нашего банка, разумеется. 
+          .conditions__content-img
+            img(src='img/credit.svg' alt='Кредит').conditions__content-img--3

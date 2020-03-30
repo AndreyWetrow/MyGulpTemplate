@@ -8,13 +8,12 @@
 /////////////////////////////////
 /* Для png и jpg */
 img {
-  max-width: 80px;
-  height: auto; 
-  
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 ///////////////////////////////
-
 &>* {
   margin: 10px 0;
 
@@ -25,4 +24,11 @@ img {
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+//////////////////////////////////
+.login-link:hover::before,
+.login-link:focus::before,
+.login-link:active::before {
+  opacity: 1;
 }
