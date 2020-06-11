@@ -1,99 +1,48 @@
-header.header#header
-  .header-bg
-  .container.top
-    .header__logo.logo device
-    .u-nav
-      form.u-nav__search.search 
-        button.search__btn(type="submit")
-          +icon('search','search__icon')
-        input.search__field(type="search" placeholder="Поиск по сайту")
-      .u-nav__item
-        a(href="#").u-nav__enter Войти
-          +icon('user','u-nav__enter-icon')
-        a(href="#").u-nav__compare Сравнить
-          +icon('compare','u-nav__compare-icon')
-        a(href="#").u-nav__backet Корзина
-          +icon('cart','u-nav__backet-icon')
-    nav.nav
-      .nav__link.catalog
-        .catalog__block
-          span.catalog__name каталог товаров
-          span.catalog__btn
-      .nav__item
-        a(href="#").nav__link.delivery доставка
-        a(href="#").nav__link.warranty гарантия
-        a(href="#").nav__link.contacts контакты
-    .full-nav
-      .full-nav__wrapper
-        .full-nav__block
-          .full-nav__list
-            li.full-nav__item
-              a(href="#") Виртуальная реальность
-            li.full-nav__item 
-              a(href="#") Моноподы для селфи
-            li.full-nav__item
-              a(href="#") Экшн-камеры
-        .full-nav__block
-          .full-nav__list
-            li.full-nav__item
-              a(href="#") Фитнес-браслеты 
-            li.full-nav__item
-              a(href="#") Умные часы
-        .full-nav__block
-          .full-nav__list 
-            li.full-nav__item
-              a(href="#") Квадрокоптеры
-  .container.container--header
-    .header-slider
-      .header-slider__item
-        .header-slider__block
-          .header-slider__bg(style="background-image: url('img/slider-bg-1.png');") 
-        .header-slider__block.info
-          .info__number 01
-          .info__title Делай селфи, <br> как Бен Стиллер! 
-          .info__content Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 килограмм.
-          a(href="").info__details 
-            .info__details-line.yellow-line
-            span Подробнее
-          table.indo__descr.table
-            tr  
-              th 8.5 м
-              th.table__col-2 5 кг
-              th Карбон
-            tr  
-              td Длина палки
-              td.table__col-2 Вес палки
-              td Материал
-      .header-slider__item
-        .header-slider__block
-          .header-slider__bg(style="background-image: url('img/slider-bg-2.png');") 
-        .header-slider__block.info
-          .info__number 02
-          .info__title Худеем <br> правильно!
-          .info__content Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.
-          a(href="").info__details 
-            .info__details-line.yellow-line
-            span Подробнее
-          table.indo__descr.table
-            tr  
-              th 48 часов 
-            tr  
-              td Без подзарядки
-      .header-slider__item
-        .header-slider__block
-          .header-slider__bg(style="background-image: url('img/slider-bg-3.png');") 
-        .header-slider__block.info
-          .info__number 03
-          .info__title Порхает как бабочка, жалит как пчела!
-          .info__content Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.
-          a(href="").info__details 
-            .info__details-line.yellow-line
-            span Подробнее
-          table.indo__descr.table
-            tr  
-              th 800 м
-              th.table__col-2 50 м 
-            tr  
-              td Дальность полета
-              td.table__col-2 Радиус поражения 
-    .test
+header.header 
+  .container
+    .header-wrapper
+      nav.main-nav.main-nav--closed.main-nav--noJs
+        .main-nav__logo
+          a.main-nav__logo-link
+            img(src='img/logo.svg' alt='Логотип' width="202px" height="59px").main-nav__img
+        .main-nav__logo-img
+          img(src="img/logo-img.svg"  width="33px" height="38px" alt="картинка")
+        .main-nav__title #[span cat] energy
+        .main-nav__menu.main-menu
+          ul.main-menu__list
+            li.main-menu__item
+              a.main-menu__link.main-menu__link--active Главная
+            li.main-menu__item
+              a.main-menu__link Каталог продукции
+            li.main-menu__item
+              a.main-menu__link Подбор программы
+        .main-nav__menu-icon
+          .main-nav__menu-line
+          .main-nav__menu-closed
+      .header-content
+        .header-content__descr
+          .header-content__center
+            .header-content__title Функциональное питание  для котов
+            .header-content__slogan Занялся собой? Займись котом!
+            .header-content__button
+              a.header-content__link.btn Подобрать программу
+        .header-content__bg
+          img(src="img/header-content-bg.png" alt='Кружка').header-content__img
+        .header-content__button-mobile
+          .w-100.btn Подобрать программу
+
+
+    //- .header__logo.logo device
+    //- .u-nav
+    //-   form.u-nav__search.search 
+    //-     button.search__btn(type="submit")
+    //-       +icon('search','search__icon')
+    //-     input.search__field(type="search" placeholder="Поиск по сайту")
+    //-   .u-nav__item
+    //-     a(href="#").u-nav__enter Войти
+    //-       +icon('user','u-nav__enter-icon')
+    //-     a(href="#").u-nav__compare Сравнить
+    //-       +icon('compare','u-nav__compare-icon')
+    //-     a(href="#").u-nav__backet Корзина
+    //-       +icon('cart','u-nav__backet-icon')
+     

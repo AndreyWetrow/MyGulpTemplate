@@ -6,14 +6,18 @@ html(lang="ru-RU")
   head
     meta(charset="utf-8")
     title #{title}
+    script(src="js/modernizr-custom.js")
     <!--[if IE]>
     meta(http-equiv='X-UA-Compatible', content="IE = edge")
     <![endif]-->
     meta(name="viewport" content="width=device-width,initial-scale=1")
     meta(name="keywords" content="")
-    
-    link(link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,700,900&display=swap&subset=cyrillic" rel="stylesheet") 
+     
+    //- link(link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,700,900&display=swap&subset=cyrillic" rel="stylesheet") 
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     link(rel="stylesheet" type='text/css' href="css/style.css")
+
 
     <!--[if lt IE 9]>
     script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
@@ -35,8 +39,8 @@ html(lang="ru-RU")
         .sk-circle12.sk-circle
     include ../modules/header/header
     block content
-    include ../modules/footer/footer
-    include ../modules/popups/popups
+    //- include ../modules/footer/footer
+    //- include ../modules/popups/popups
     //- script(src="static/js/jquery-3.3.1.min.js")
     //- script(src="static/js/libs.min.js")
     block script

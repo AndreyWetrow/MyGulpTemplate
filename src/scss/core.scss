@@ -3,16 +3,16 @@ html,
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 body {
-  font-family: 'opensans', serif;
-  // font-weight: 400;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
   font-size: 16px;
-  color: $font-color; 
+  color: $font-color;
   background-color: #ffffff;
-  min-width: 320px; 
+  min-width: 320px;
 }
 
 *,
@@ -43,10 +43,22 @@ li {
 
 //Classes
 .container {
-  max-width: 1200px;
+  max-width: 1300px;
+  min-width: 320px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 40px;
   width: 100%;
+
+  @media screen and (max-width: $tablet-size) {
+    padding: 0 30px;
+  }
+  @media screen and (max-width: $phone-size) {
+    padding: 0 20px;
+  }
+}
+
+section {
+  margin-bottom: 70px;
 }
 
 // html {
@@ -158,18 +170,18 @@ li {
 
 // ////////////////////////////////////// 
 
-// .visually-hidden:not(:focus):not(:active), input[type="checkbox"].visually-hidden, input[type="radio"].visually-hidden {
-//   position: absolute;
-//   width: 1px;
-//   height: 1px;
-//   margin: -1px;
-//   border: 0;
-//   padding: 0;
-//   white-space: nowrap;
-//   clip-path: inset(100%);
-//   clip: rect(0 0 0 0);
-//   overflow: hidden;
-// }
+.visually-hidden:not(:focus):not(:active), input[type="checkbox"].visually-hidden, input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 
 
 // .overlayForm {
