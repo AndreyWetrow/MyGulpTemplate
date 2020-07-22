@@ -1,48 +1,22 @@
-header.header 
+header.header
   .container
-    .header-wrapper
-      nav.main-nav.main-nav--closed.main-nav--noJs
-        .main-nav__logo
-          a.main-nav__logo-link
-            img(src='img/logo.svg' alt='Логотип' width="202px" height="59px").main-nav__img
-        .main-nav__logo-img
-          img(src="img/logo-img.svg"  width="33px" height="38px" alt="картинка")
-        .main-nav__title #[span cat] energy
-        .main-nav__menu.main-menu
-          ul.main-menu__list
-            li.main-menu__item
-              a.main-menu__link.main-menu__link--active Главная
-            li.main-menu__item
-              a.main-menu__link Каталог продукции
-            li.main-menu__item
-              a.main-menu__link Подбор программы
-        .main-nav__menu-icon
-          .main-nav__menu-line
-          .main-nav__menu-closed
-      .header-content
-        .header-content__descr
-          .header-content__center
-            .header-content__title Функциональное питание  для котов
-            .header-content__slogan Занялся собой? Займись котом!
-            .header-content__button
-              a.header-content__link.btn Подобрать программу
-        .header-content__bg
-          img(src="img/header-content-bg.png" alt='Кружка').header-content__img
-        .header-content__button-mobile
-          .w-100.btn Подобрать программу
-
-
-    //- .header__logo.logo device
-    //- .u-nav
-    //-   form.u-nav__search.search 
-    //-     button.search__btn(type="submit")
-    //-       +icon('search','search__icon')
-    //-     input.search__field(type="search" placeholder="Поиск по сайту")
-    //-   .u-nav__item
-    //-     a(href="#").u-nav__enter Войти
-    //-       +icon('user','u-nav__enter-icon')
-    //-     a(href="#").u-nav__compare Сравнить
-    //-       +icon('compare','u-nav__compare-icon')
-    //-     a(href="#").u-nav__backet Корзина
-    //-       +icon('cart','u-nav__backet-icon')
-     
+    .header__inner
+      a(href='#').logo
+        picture.logo__img
+          source(srcset="images/logo-mobile.png" alt=""  media="(max-width: 600px)")
+          img(src="images/logo.png" alt="")
+      nav.menu
+        ul.menu__list
+          li.menu__list-item
+            a(href="#").menu__list-link О ДРОНЕ
+          li.menu__list-item
+            a(href="#").menu__list-link ПРЕИМУЩЕСТВА
+          li.menu__list-item
+            a(href="#").menu__list-link ХАРАКТЕРИСТИКИ
+          li.menu__list-item
+            a(href="#").menu__list-link ВОПРОСЫ
+          li.menu__list-item
+            a(href="#").menu__list-link КОНТАКТЫ
+      .header__info
+        button.header__btn купить
+        a(href="tel:80505676767").header__phone 8 (050) 567 67 67

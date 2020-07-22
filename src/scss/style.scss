@@ -1,22 +1,30 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
 // @import "smart-grid.less";
 
 // .reset();
 
 
 @import "../../node_modules/normalize.css/normalize";
-@import "fonts.scss";
 @import "variables";
-@import "core";
 @import "libs";
+@import "../libs/slick-carousel/slick/slick.scss";
+@import "../libs/slick-carousel/slick/slick-theme.scss";
+@import "fonts.scss";
+@import "core";
 // @import "mixins.less";
 
-@import "modules/header/header"; 
-@import "modules/example/example"; 
-@import "modules/mass/mass"; 
-@import "modules/small-blocks/small-blocks"; 
+@import "modules/header/header";
+@import "modules/sections/section-1";
+@import "modules/sections/section-2";
+@import "modules/sections/section-3";
+@import "modules/sections/section-4";
+@import "modules/sections/section-5";
+@import "modules/sections/section-6";
+@import "modules/sections/footer";
+// @import "modules/mass/mass"; 
+// @import "modules/small-blocks/small-blocks"; 
 // @import "modules/footer/footer"; 
-@import "modules/work/work"; 
+// @import "modules/work/work"; 
 // @import "modules/popups/popups"; 
 // @import "modules/service/service"; 
 // @import "modules/form/form"; 
@@ -25,34 +33,9 @@
 // @import "modules/surf/surf"; 
 // @import "modules/shop/shop"; 
 // @import "modules/travel/travel"; 
-// @import "modules/basket/basket"; 
+// @import "modules/basket/basket";  
 
-// @import "modules/about/about";  
-// @import "modules/advantage/advantage";  
-// @import "modules/action/action"; 
-// @import "modules/breadcrumbs/breadcrumbs"; 
-// @import "modules/buttons/buttons"; 
-// @import "modules/category/category"; 
-// @import "modules/contacts/contacts"; 
-// @import "modules/dropdown/dropdown"; 
-// @import "modules/filter/filter"; 
-// @import "modules/footer/footer"; 
-// @import "modules/catalog/catalog"; 
-// @import "modules/navigation/navigation"; 
-// @import "modules/not-found/not-found"; 
-// @import "modules/product/product"; 
-// @import "modules/popups/popups"; 
-// @import "modules/small-blocks/small-blocks"; 
-// @import "modules/search/search"; 
-// @import "modules/sub-category/sub"; 
-// @import "modules/slider/slider"; 
-// @import "modules/user/user.less"; 
-// @import "blocks/surf.less"; 
-// @import "blocks/travel.less"; 
- 
- 
+
 // .degubGrid{
 //     .debug(rgba(0, 0, 0, 0.4), 1px solid #ff0);
 // }
-
- 

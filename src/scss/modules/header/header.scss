@@ -1,440 +1,60 @@
 .header {
-  margin-bottom: 80px;
-  padding-top: 50px;
-  background-color: #ffffff;
-  .container {
-    // background-image: url('../img/header-bg.jpg');
-    // background-repeat: no-repeat;
-    // background-size: auto 100%;
-    // background-position: right top;
-  }
+  position: fixed;
+  left: 0;
+  top: 30px;
+  right: 0;
+  z-index: 1;
 
-  @media screen and (max-width: $phone-size) {
-    padding-top: 0;
-  }
-
-  &-wrapper {
-    background-image: url('../img/header-bg.jpg');
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: right top;
-
-    @media screen and (max-width: $tablet-size) {
-      background-image: none;
-    }
-
-    @media screen and (max-width: $phone-size) {
-      margin-right: -20px;
-      margin-left: -20px;
-      // padding: 0 20px;
-    }
-
-  }
-}
-
-.main-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @media screen and (max-width: 680px) {
-    flex-wrap: wrap;
-
-    &--closed {
-      .main-nav__menu-closed {
-        display: none;
-      }
-
-      .main-nav__menu-line {
-        display: block;
-      }
-    }
-
-    &--opened {
-      .main-nav__menu-closed {
-        display: block;
-      }
-
-      .main-nav__menu-line {
-        display: none;
-      }
-    }
-  }
-
-  @media screen and (max-width: $phone-size) {
-    padding: 0;
-    border-bottom: 2px solid #e6e6e6;
-  }
-
-
-
-  &__logo {
-    @media screen and (max-width: $phone-size) {
-      display: none;
-    }
-  }
-
-  &__logo-link {
-    display: block;
-    position: relative;
-  }
-
-  &__img {
-    @media screen and (max-width: $tablet-size) {
-      width: 173px;
-      height: 58px;
-      position: relative;
-      top: -4px;
-    }
-  }
-
-  &__logo-img {
-    display: none;
-
-    @media screen and (max-width: 680px) {
-      padding-left: 20px;
-    }
-
-    @media screen and (max-width: $phone-size) {
-      display: block;
-    }
-  }
-
-  &__title {
-    display: none;
+  &__inner {
     text-transform: uppercase;
-    font-weight: 18px;
-    color: $black;
-
-    span {
-      font-weight: 700;
-    }
-
-    @media screen and (max-width: 680px) {
-      padding: 24px 0;
-      font-size: 20px;
-    }
-
-    @media screen and (max-width: $phone-size) {
-      display: block;
-    }
+    font-size: 15px;
+    line-height: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 30px;
+    @extend %ubuntu-medium;
   }
 
-  @media screen and (max-width: 680px) {
-    &--closed {
-      .main-nav__menu {
-        display: none;
-      }
-    }
-  }
-
-
-}
-
-.main-nav--noJs {
-  .main-nav__menu-line {
-    display: none;
-  }
-
-  .main-nav__menu-closed {
-    display: none;
-  }
-}
-
-
-
-.main-nav__menu {
-
-  &-icon {
-    width: 24px;
-    height: 18px;
+  &__btn {
+    color: #fff;
+    text-transform: uppercase;
+    background-color: transparent;
+    padding: 6px 28px;
+    border: 1px solid #FFFFFF;
+    border-radius: 3px;
+    line-height: 15px;
+    margin-right: 8px;
     cursor: pointer;
-    position: relative;
-    display: none;
-    padding: 15px;
-
-    @media screen and (max-width: 680px) {
-      display: block;
-      margin-right: 20px;
-
-    }
-  }
-
-  &-line {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 24px;
-    height: 2px;
-    background-color: $black;
-
-    &::after,
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 24px;
-      height: 2px;
-      background-color: inherit;
-      left: 0;
-      top: -6px;
-    }
-
-    &::before {
-      top: 6px;
-    }
-
-    @media screen and (max-width: 680px) {
-      display: block;
-    }
-  }
-
-  @media screen and (max-width: 680px) {
-    display: block;
-    order: 2;
-    width: 100%;
-
-  }
-
-  &-closed {
-
-    &::after,
-    &::before {
-      content: "";
-      display: block;
-      position: absolute;
-      width: 24px;
-      height: 2px;
-      background-color: $black;
-      left: 0;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-45deg);
-    }
-
-    &::after {
-      transform: translate(-50%, -50%) rotate(45deg);
-    }
-  }
-
-
-
-
-
-}
-
-
-.main-menu {
-
-  &__item {
-    transition: all ease .5s 0s;
+    transition: all ease .3s 0s;
 
     &:hover {
-      .main-menu__link {
-        color: #707070;
-        transition: all ease .5s 0s;
-      }
-    }
-
-    &:active {
-      .main-menu__link {
-        color: #b7b7b7;
-        transition: all ease .5s 0s;
-      }
-    }
-
-    @media screen and (max-width: 680px) {
-      display: block;
-      border-top: 2px solid #e6e6e6;
-      width: 100%;
-      text-align: center;
-      padding: 20px 0;
+      background: #FFFFFF;
+      border: 1px solid #FFFFFF; 
+      color: #1C1C1C;
     }
   }
 
-  &__link {
-    font-size: 20px;
-    color: #fff;
-    line-height: 24px;
-    text-transform: uppercase;
-    cursor: pointer;
-    padding: 10px 0;
-    user-select: none;
-
-
-
-    @media screen and (max-width: $tablet-size) {
-      color: $black;
-      font-size: 18px;
-    }
-
-    @media screen and (max-width: 680px) {
-      font-size: 20px;
-
-    }
-
-    &--active {
-      border-bottom: 2px solid #fff;
-
-      @media screen and (max-width: 768px) {
-        border-bottom: 2px solid $main-green;
-
-      }
-    }
+  &__phone {
+    font-size: 16px;
+    line-height: 18px;
+    @extend %ubuntu-bold;
   }
+}
 
+.menu {
   &__list {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-
-    @media screen and (max-width: 680px) {
-      flex-direction: column;
-      width: 100%;
-    }
 
     &>* {
       &:not(:last-child) {
-        margin-right: 35px;
-
-        @media screen and (max-width: 680px) {
-          margin-right: 0;
-        }
+        margin-right: 20px;
       }
-
-
     }
+
   }
+
+  &__list-item {}
 }
-
-.header-content {
-  display: flex;
-  color: $black;
-  max-width: 100%;
-  height: 100%;
-
-  @media screen and (max-width: $tablet-size) {
-    flex-direction: column;
-  }
-
-  @media screen and (max-width: $phone-size) {}
-
-  &__button {
-    padding-bottom: 90px;
-
-    @media screen and (max-width: $phone-size) {
-      display: none;
-    }
-  }
-
-  &__button-mobile {
-    padding: 0 20px;
-    text-align: center;
-    display: none;
-
-    .w-100 {
-      width: 100%;
-    }
-
-    @media screen and (max-width: $phone-size) {
-      display: block;
-    }
-  }
-
-
-
-  &__bg {
-    flex: 0 0 40%;
-    max-width: 40%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    @media screen and (max-width: $tablet-size) {
-      flex-basis: 0;
-      flex-grow: 1;
-      max-width: 100%;
-      margin-top: -165px;
-    }
-
-  }
-
-  &__center {
-    max-width: 420px;
-    margin-left: auto;
-
-    @media screen and (max-width: $tablet-size) {
-      padding-left: 90px;
-      margin: 0;
-      max-width: 100%;
-    }
-
-    @media screen and (max-width: $phone-size) {
-      padding-left: 0;
-    }
-  }
-
-  &__descr {
-    flex: 0 0 42%;
-    max-width: 42%;
-    // padding: 0 20px;
-
-    @media screen and (max-width: $tablet-size) {
-      flex-basis: 0;
-      flex-grow: 1;
-      max-width: 100%;
-    }
-
-    @media screen and (max-width: $phone-size) {
-      background-image: url("../img/header-mobile-bg.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center center;
-      padding: 0 20px;
-      padding-bottom: 175px;
-    }
-  }
-
-  &__link {
-    font-size: 20px;
-    line-height: 24px;
-    color: $white;
-  }
-
-  &__slogan {
-    font-size: 20px;
-    line-height: 22px;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-
-    @media screen and (max-width: $tablet-size) {
-      margin-bottom: 40px;
-    }
-
-    @media screen and (max-width: $phone-size) {
-      color: $white;
-      text-align: center;
-    }
-  }
-
-  &__title {
-    font-size: 60px;
-
-    padding-top: 100px;
-    margin-bottom: 40px;
-
-    @media screen and (max-width: $tablet-size) {
-      padding-top: 50px;
-    }
-
-
-    @media screen and (max-width: $phone-size) {
-      font-size: 36px;
-      color: $white;
-      text-align: center;
-    }
-  }
-}
-

@@ -1,13 +1,18 @@
 extends template/main 
 
 block variables
-  - var title = 'cat-energy';
+  - var title = 'mavic';
   - var pageClass = 'index-page';
 
 block content
-  include modules/mass/mass
-  include modules/work/work
-  include modules/example/example
+  include modules/sections/section-1
+  //- include modules/sections/section-2
+  //- include modules/sections/section-3
+  //- include modules/sections/section-4
+  //- include modules/sections/section-5
+  //- include modules/sections/section-6
+  //- include modules/work/work
+  //- include modules/example/example
   //- include modules/info/info
   //- include modules/footer/footer
   //- include modules/how/how
@@ -17,4 +22,4 @@ block content
   //- include pages/index/discount
   //- include modules/sales-leaders 
 block script 
-  // script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+   
