@@ -12,15 +12,17 @@
 @import "fonts.scss";
 @import "core";
 // @import "mixins.less";
-
+.red {
+  color: blue;
+}
 @import "modules/header/header";
 @import "modules/sections/section-1";
-@import "modules/sections/section-2";
-@import "modules/sections/section-3";
-@import "modules/sections/section-4";
-@import "modules/sections/section-5";
-@import "modules/sections/section-6";
-@import "modules/sections/footer";
+// @import "modules/sections/section-2";
+// @import "modules/sections/section-3";
+// @import "modules/sections/section-4";
+// @import "modules/sections/section-5";
+// @import "modules/sections/section-6";
+// @import "modules/sections/footer";
 // @import "modules/mass/mass"; 
 // @import "modules/small-blocks/small-blocks"; 
 // @import "modules/footer/footer"; 

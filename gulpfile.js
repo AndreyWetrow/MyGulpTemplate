@@ -10,24 +10,29 @@
 
 //cmd//cd /d и просто перетащить папку
 
-//npm i -g npm-check-updates - С помощью npm-check-updates можно узнать какие зависимости обновились с момента их установки с помощью npm/bower.
-//Потом, перед иницииализацией - ncu (просто проверка package.json на обновления), если есть что обновлять тогда ncu -u
+//npm i -g npm-check-updates - плагин npm-check-updates позволяет находить самые последние версии зависимостей, объявленных в package.json, и независимо от каких либо ограничений версий.
+
+//Потом, перед иницииализацией - ncu (просто проверка package.json на обновления), если есть что обновлять тогда ncu -u (это использование плагина npm-check-updates)
 
 //Инициализация проекта: npm i
 //Для запуска скрипта из package.json: npm run (Имя скрипта)
 //Для сжатия картинок лучше использовать сайт https://tinypng.com/
-//npm init -y - создает пустой package.json с заполненными по умолчанию параметрами
+// . npm init -y - это формирование базового package.json в проекте по умолчанию.
+// npm i webpack webpack-cli webpack-dev-server -D - установка webpack (Лаврик продвинутый курс программистов)
 
-const autoprefixer = require("gulp-autoprefixer");
-const browserSync = require("browser-sync").create();
+// Проблемы
+// npm rebuild node-sass решил проблему с node-sass
+
 const gulp = require("gulp");
-const gulpif = require("gulp-if");
-const del = require("del");
 const concat = require("gulp-concat");
+const autoprefixer = require("gulp-autoprefixer");
 const cleanCSS = require("gulp-clean-css");
-const sourcemaps = require("gulp-sourcemaps");
-var gcmq = require("gulp-group-css-media-queries");
 const uglify = require("gulp-uglify");
+const del = require("del");
+const browserSync = require("browser-sync").create();
+const sourcemaps = require("gulp-sourcemaps");
+const gulpif = require("gulp-if");
+var gcmq = require("gulp-group-css-media-queries");
 var sass = require("gulp-sass");
 const smartgrid = require("smart-grid");
 //Конец Smartgrid
@@ -42,14 +47,15 @@ const imageminJpegRecompress = require("imagemin-jpeg-recompress");
 const imageminPngquant = require("imagemin-pngquant");
 const pug = require("gulp-pug");
 const merge = require("merge-stream");
-const svgo = require('gulp-svgo');
+const svgo = require("gulp-svgo");
 const ttf2woff = require("gulp-ttf2woff");
-const ttf2woff2 = require('gulp-ttf2woff2');
+const ttf2woff2 = require("gulp-ttf2woff2");
 // const htmlbeautify = require('gulp-html-beautify');
 const size = require("gulp-filesize"); //выводит в консоль размер файлов до и после их сжатия, чем создаёт чувство глубокого морального удовлетворения, особенно при минификации картинок
-const webp = require('gulp-webp'); // Пережатие картинок в webp
-const webphtml = require('gulp-webp-html'); // добавляет picture в html (пока не пригодился, проще руками по ходу вставлять)
-const webpcss = require("gulp-webpcss"); // добавляет класс webp в css (пока не пригодился, проще руками по ходу вставлять)
+const webp = require("gulp-webp"); // Пережатие картинок в webp
+const webphtml = require("gulp-webp-html"); // добавляет picture в html (пока не пригодился, проще руками по ходу вставлять)
+// const webpcss = require("gulp-webpcss"); // добавляет класс webp в css (пока не пригодился, проще руками по ходу вставлять)
+const webpack = require("webpack-stream");
 
 // Первый вариант
 // const isDev = false;
@@ -61,6 +67,27 @@ const isDev = process.argv.indexOf("--dev") !== -1;
 const isProd = !isDev;
 const isSync = process.argv.indexOf("--sync") !== -1;
 
+let webConfig = {
+  output: {
+    filename: "all.js",
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loader: "babel-loader",
+        exclude: "/node_modules/",
+      },
+    ],
+  },
+  mode: isDev ? "development" : "production",
+  devtool: isDev ? "eval-source-map" : "none",
+  // watch: true,
+  // module: {
+  //   rules: [{ test: /\.css$/, loader: "style!css" }],
+  // },
+};
+
 // let cssFiles = [
 // './node_modules/normalize.css/normalize.css',
 //   './src/css/base.css',
@@ -68,25 +95,39 @@ const isSync = process.argv.indexOf("--sync") !== -1;
 //   './src/css/styles.css'
 // ];
 
-let jsFiles = [
-  "./src/libs/jquery/jquery.min.js",
-  // "./src/libs/magnific-popup/dist/jquery.magnific-popup.min.js", 
-  './src/libs/slick-carousel/slick/slick.min.js',
-  './node_modules/fullpage.js/dist/fullpage.min.js',
-  // './node_modules/wow.js/dist/wow.min.js',
-  // './src/libs/simplebar/packages/simplebar/src/simplebar.min.js',
-  // './src/libs/jqueryValidation/jquery.validate.min.js',
-  // './src/libs/maskedinput/maskedinput.js',
-  // './src/libs/noUiSlider/nouislider.min.js',
-  // './src/libs/wNumb/wNumb.min.js',
-  // './src/libs/jquery-mmenu/jquery.mmenu.min.all.js',
-  // './src/libs/menuStyleSlider/js/index.js',
-  // './src/libs/OwlCarousel/OwlCarousel2-2.3.4/dist/owl.carousel.min.js',
-  // './src/libs/jQuery.equalHeights/jquery.equalheights.js',
-  // './src/libs/fotorama/fotorama.js',
-  // './src/libs/selectize/dist/js/standalone/selectize.min.js',
-  "./src/js/script.js"
-];
+// let jsFiles = [
+//   "./node_modules/jquery/dist/jquery.min.js",
+//   "./src/libs/modernizr-custom.js",
+//   // "./src/libs/magnific-popup/dist/jquery.magnific-popup.min.js",
+//   // './src/libs/slick-carousel/slick/slick.min.js',
+//   // './node_modules/fullpage.js/dist/fullpage.min.js',
+//   // './node_modules/wow.js/dist/wow.min.js',
+//   // './src/libs/simplebar/packages/simplebar/src/simplebar.min.js',
+
+//   "./src/js/script.js",
+// ];
+
+function html() {
+  return gulp
+    .src("./src/*.html")
+    .pipe(gulp.dest("./build"))
+    .pipe(gulpif(isSync, browserSync.stream()));
+}
+
+function htmlPug() {
+  return (
+    gulp
+      .src("./src/pug/*.pug")
+      .pipe(
+        pug({
+          pretty: true,
+        })
+      )
+      // .pipe(webphtml())
+      .pipe(gulp.dest("./build"))
+      .pipe(gulpif(isSync, browserSync.stream()))
+  );
+}
 
 function clear() {
   return del("build/*");
@@ -95,51 +136,60 @@ function clear() {
 function styles() {
   return (
     gulp
-    .src("./src/scss/style.scss")
-    .pipe(gulpif(isDev, sourcemaps.init()))
-    .pipe(sass())
-    // .pipe(concat('styles.css'))
-    // .on('error', console.error.bind(console))
+      // .src(cssFiles) так файлы из массива будут добавляться не в алфавитном порядке, а так как мы назначили
+      // .pipe(concat('styles.css'))
+      .src("./src/scss/style.scss")
+      .pipe(gulpif(isDev, sourcemaps.init()))
+      .pipe(sass())
 
-    .pipe(
-      autoprefixer({
-        overrideBrowserslist: [">0.1%"],
-        cascade: false
-      })
-    )
-    //Из-за gcmq() плохо работает sourseMap, наверное луче использовать в конце верстки
-    // .pipe(gcmq())
-    .pipe(gulpif(isProd, cleanCSS({ level: 2 })))
-    .pipe(gulpif(isDev, sourcemaps.write()))
+      // .on('error', console.error.bind(console))
 
-    .pipe(gulp.dest("./build/css"))
-    .pipe(gulpif(isSync, browserSync.stream()))
+      .pipe(
+        autoprefixer({
+          overrideBrowserslist: [">0.1%"],
+          cascade: false,
+        })
+      )
+      //Из-за gcmq() плохо работает sourseMap, наверное луче использовать в конце верстки
+      // .pipe(gcmq())
+      .pipe(gulpif(isProd, cleanCSS({ level: 2 })))
+      .pipe(gulpif(isDev, sourcemaps.write()))
+
+      .pipe(gulp.dest("./build/css"))
+      .pipe(gulpif(isSync, browserSync.stream()))
   );
 }
 
+// function scripts() {
+//   return (
+//     gulp
+//       .src(jsFiles)
+//       .pipe(gulpif(isDev, sourcemaps.init()))
+//       .pipe(concat("all.js"))
+//       // .pipe(uglify({
+//       //   toplevel: true
+//       // }))
+//       .pipe(gulpif(isDev, sourcemaps.write()))
+//       .pipe(gulp.dest("./build/js"))
+//       .pipe(gulpif(isSync, browserSync.stream()))
+//   );
+// }
 function scripts() {
-  return (
-    gulp
-    .src(jsFiles)
-    .pipe(gulpif(isDev, sourcemaps.init()))
-    .pipe(concat("all.js"))
-    // .pipe(uglify({
-    //   toplevel: true
-    // })) 
-    .pipe(gulpif(isDev, sourcemaps.write()))
+  return gulp
+    .src("./src/js/script.js") 
+    .pipe(webpack(webConfig)) 
     .pipe(gulp.dest("./build/js"))
-    .pipe(gulpif(isSync, browserSync.stream()))
-  );
+    .pipe(gulpif(isSync, browserSync.stream()));
 }
 
-function scriptModernizr() {
-  return (
-    gulp
-    .src("src/libs/modernizr-custom.js")
-    .pipe(gulp.dest("./build/js"))
-    .pipe(gulpif(isSync, browserSync.stream()))
-  );
-}
+// function scriptModernizr() {
+//   return (
+//     gulp
+//     .src("src/libs/modernizr-custom.js")
+//     .pipe(gulp.dest("./build/js"))
+//     .pipe(gulpif(isSync, browserSync.stream()))
+//   );
+// }
 
 // function allimg() {
 //   return gulp.src('./src/img/**/*.{png, jpg}')
@@ -156,7 +206,7 @@ function images() {
       imagemin([
         imagemin.gifsicle({ interlaced: true }),
         imagemin.mozjpeg({ quality: 75, progressive: true }), // перестал выдавать ошибку и с ним сжимает больше
-        imagemin.optipng({ optimizationLevel: 3 })
+        imagemin.optipng({ optimizationLevel: 3 }),
       ])
     )
     .pipe(gulp.dest("./build/images"))
@@ -168,14 +218,16 @@ function webpImg() {
   return gulp
     .src("./src/img/**/*.+(png|jpg|jpeg|gif|ico|webp)")
     .pipe(size())
-    .pipe(webp({
-      quality: 75,
-      method: 6,
-    }))
+    .pipe(
+      webp({
+        quality: 75,
+        method: 6,
+      })
+    )
     .pipe(gulp.dest("./build/images"))
     .pipe(gulpif(isSync, browserSync.stream()))
     .pipe(size());
-};
+}
 
 //end////////////////////Мой images//////////////////////////
 // по процентам вышло одинаково
@@ -212,36 +264,36 @@ function webpImg() {
 function svg() {
   return (
     gulp
-    .src("./src/img/sprite/**/*.svg")
-    .pipe(
-      svgmin({
-        js2svg: {
-          pretty: true
-        }
-      })
-    )
-    .pipe(
-      cheerio({
-        run: function($) {
-          $("[fill]").removeAttr("fill");
-          $("[stroke]").removeAttr("stroke");
-          $("[style]").removeAttr("style");
-        },
-        parserOptions: { xmlMode: true }
-      })
-    )
-    .pipe(replace("&gt;", ">"))
-    // build svg sprite
-    .pipe(
-      svgSprite({
-        mode: {
-          symbol: {
-            sprite: "sprite.svg"
-          }
-        }
-      })
-    )
-    .pipe(gulp.dest("./build/images/"))
+      .src("./src/img/sprite/**/*.svg")
+      .pipe(
+        svgmin({
+          js2svg: {
+            pretty: true,
+          },
+        })
+      )
+      .pipe(
+        cheerio({
+          run: function ($) {
+            $("[fill]").removeAttr("fill");
+            $("[stroke]").removeAttr("stroke");
+            $("[style]").removeAttr("style");
+          },
+          parserOptions: { xmlMode: true },
+        })
+      )
+      .pipe(replace("&gt;", ">"))
+      // build svg sprite
+      .pipe(
+        svgSprite({
+          mode: {
+            symbol: {
+              sprite: "sprite.svg",
+            },
+          },
+        })
+      )
+      .pipe(gulp.dest("./build/images/"))
   );
 }
 
@@ -250,26 +302,6 @@ function totalSvg() {
     .src("./src/img/totalSvg/**/*.svg")
     .pipe(svgo())
     .pipe(gulp.dest("./build/images"))
-    .pipe(gulpif(isSync, browserSync.stream()));
-}
-
-function html() {
-  return gulp
-    .src("./src/*.html")
-    .pipe(gulp.dest("./build"))
-    .pipe(gulpif(isSync, browserSync.stream()));
-}
-
-function htmlPug() {
-  return gulp
-    .src("./src/pug/*.pug")
-    .pipe(
-      pug({
-        pretty: true
-      })
-    )
-    // .pipe(webphtml())
-    .pipe(gulp.dest("./build"))
     .pipe(gulpif(isSync, browserSync.stream()));
 }
 
@@ -337,7 +369,7 @@ function watch() {
   if (isSync) {
     browserSync.init({
       server: {
-        baseDir: "build"
+        baseDir: "build",
       },
       browser: [""],
     });
@@ -348,7 +380,10 @@ function watch() {
   gulp.watch("./src/**/*.pug", htmlPug);
   gulp.watch("./src/js/**/*.js", scripts);
   // gulp.watch("./src/img/**/*.{png,jpg}", images);
-  gulp.watch("./src/img/**/*.+(png|jpg|jpeg|gif|ico|webp)", gulp.parallel(images, webpImg));
+  gulp.watch(
+    "./src/img/**/*.+(png|jpg|jpeg|gif|ico|webp)",
+    gulp.parallel(images, webpImg)
+  );
   gulp.watch("./src/img/sprite/*.svg", svg);
   gulp.watch("./src/img/totalSvg/**/*.svg", totalSvg);
   gulp.watch("./src/fonts/**/*", gulp.series(clearFonts, fonts));
@@ -372,7 +407,18 @@ function grid(done) {
 
 let build = gulp.series(
   clear,
-  gulp.parallel(htmlPug, styles, scripts, images, webpImg, svg, totalSvg, fonts, fontWoff, fontWoff2, scriptModernizr)
+  gulp.parallel(
+    htmlPug,
+    styles,
+    scripts,
+    images,
+    webpImg,
+    svg,
+    totalSvg,
+    fonts,
+    fontWoff,
+    fontWoff2
+  )
   //для html// gulp.parallel(html, styles, scripts, images, svg, totalSvg, fonts),
 );
 
