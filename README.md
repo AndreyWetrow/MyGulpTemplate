@@ -1,8 +1,8 @@
 # MyGulpTemplate
 Gulp template
 
-07.12.20 
-Сорка gulp + webpack по уроку Лаврика на YouTube
+07.12.20
+Сборка gulp + webpack по уроку Лаврика на YouTube
 
 13.07.20
   1. Добавил .jshintrc
