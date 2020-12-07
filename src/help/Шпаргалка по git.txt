@@ -1,3 +1,5 @@
+Удаление удаленной ветки: git push origin -d (название ветки с git)
+///////////////////////
 и мhttps://github.com/AndreyWetrow/ItDoctor
 1. git config --list - покажет глобальную конфигурацию с алиасами
 
