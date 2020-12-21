@@ -1,0 +1,24 @@
+h3.post__subtitle Обсуждение
+form.form(action="/" method="post")
+  .form__group
+    textarea.form__control.form__control--textarea(name="comment-text" placeholder="Текст комментария")
+    span.form__line
+  button.btn.btn--blue.btn--rounded.btn--sm(type="submit") Отправить
+ul.comments
+  li.comments__item
+    .comments__header
+      img.comments__avatar(src="https://via.placeholder.com/30x30" alt="")
+      .comments__author
+        .comments__name Дмитрий Валак
+        time(datetime="2020-12-21 12:12").comments__pubdate 1 неделю назад
+    .comments__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus dolor obcaecati adipisci cupiditate illo ea, totam fuga in molestias quo corporis commodi quibusdam rem quis veritatis. Veniam debitis enim in?
+    button.comments__reply(type="button") Ответить
+    ul.comments
+      li.comments__item
+        .comments__header
+          img.comments__avatar(src="https://via.placeholder.com/30x30" alt="")
+          .comments__author
+            .comments__name Дмитрий Валак
+            time(datetime="2020-12-21 12:12").comments__pubdate 1 неделю назад
+        .comments__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus dolor obcaecati adipisci cupiditate illo ea, totam fuga in molestias quo corporis commodi quibusdam rem quis veritatis. Veniam debitis enim in?
+        button.comments__reply(type="button") Ответить

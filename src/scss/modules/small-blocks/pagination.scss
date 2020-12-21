@@ -1,0 +1,31 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 8rem;
+
+  &__item {
+    margin: 0 0.5rem;
+  }
+
+  &__link {
+    height: 40px;
+    width: 40px;
+    border-radius: 3px;
+    background-color: #0D0D0D;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1.4rem;
+    color: $white;
+    transition: background-color .2s ease-in-out;
+    box-shadow: 0px 0px 10px 0 rgba(black, .15);
+
+    &:hover {
+      background-color:lighten( #0D0D0D, 2%);
+    }
+
+    &.active {
+      background-color: $blue;
+      box-shadow: 0px 0px 10px 0 rgba($blue, .15);
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.sidebar {
+  width: $sidebar-width;
+  height: 100vh;
+
+  background-color: $primary;
+  box-shadow: 4px 0 15px rgba(#050505, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-index-sidebar;
+}
+
+.sidebar__header {
+  background-color: $secondary;
+  height: 180px;
+  img {
+    object-fit: cover;
+  }
+}
+
+.sidebar__content {
+  padding: 0 2rem;
+  margin-top: -5rem;
+}
+
+.sidebar__footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+}

@@ -1,0 +1,54 @@
+.comments {
+  margin-top: 5rem;
+  
+
+  &__avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+
+  &__author {
+    padding-left: 1.5rem;
+    flex-grow: 1;
+    font-size: 1.2rem;
+    line-height: 1.4;
+  }
+  &__item {
+    margin-bottom: 3rem;
+    
+    > .comments {
+      padding-left: 3rem; 
+      margin-top: 2rem;
+    }
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  &__name {
+    color: $white;
+    font-weight: 500;
+  }
+
+  &__pubdate {
+    color: #757575;
+  }
+  &__reply {
+    color: $blue;
+    font-size: 1.2rem;
+    padding: 0;
+    line-height: 1.1;
+    cursor: pointer;
+    &:hover  {
+      text-decoration: underline;
+    }
+  }
+  &__text {
+    font-size: 1.2rem;
+    color: $white;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+}

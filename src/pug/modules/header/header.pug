@@ -1,22 +1,28 @@
 header.header
-  .container
-    .header__inner
-      a(href='#').logo
-        picture.logo__img
-          source(srcset="images/logo-mobile.png" alt=""  media="(max-width: 600px)")
-          img(src="images/logo.png" alt="")
-      nav.menu
-        ul.menu__list
-          li.menu__list-item
-            a(href="#").menu__list-link О ДРОНЕ
-          li.menu__list-item
-            a(href="#").menu__list-link ПРЕИМУЩЕСТВА
-          li.menu__list-item
-            a(href="#").menu__list-link ХАРАКТЕРИСТИКИ
-          li.menu__list-item
-            a(href="#").menu__list-link ВОПРОСЫ
-          li.menu__list-item
-            a(href="#").menu__list-link КОНТАКТЫ
-      .header__info
-        button.header__btn купить
-        a(href="tel:80505676767").header__phone 8 (050) 567 67 67
+  .header__left
+    .nav
+      ul.nav__list
+        li.nav__item
+          a.nav__link(href="index.html") Главная
+        li.nav__item
+          a.nav__link.has-subnav(href="") Статьи
+          ul.subnav
+            li
+              a.subnav__link(href="#") Создание сайтов
+            li
+              a.subnav__link(href="#") Интернет-маркетинг
+            li
+              a.subnav__link(href="#") Продвижение видео
+        li.nav__item
+          a.nav__link(href="text.html") Обо мне
+        li.nav__item
+          a.nav__link(href="text.html") Реклама
+  .header__right
+    .nav
+      ul.nav__list
+        li.nav__item
+          a.nav__link(href="profile.html") Профиль
+        li.nav__item
+          a.nav__link(href="signin.html") Выйти
+    form.search(action="search.html" method="get")
+      input.search__input(type="text" placeholder="Поиск по блогу")

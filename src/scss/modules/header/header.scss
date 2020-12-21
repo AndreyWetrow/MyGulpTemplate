@@ -1,60 +1,19 @@
-.header {
+.header { 
+  display: flex;
+  width: calc(100% - #{$sidebar-width});
+  background-color: #0D0D0D;
+  box-shadow: 0 5px 22px rgba(#000, .25);
   position: fixed;
-  left: 0;
-  top: 30px;
+  top: 0;
   right: 0;
-  z-index: 1;
-
-  &__inner {
-    text-transform: uppercase;
-    font-size: 15px;
-    line-height: 17px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 30px;
-    @extend %ubuntu-medium;
-  }
-
-  &__btn {
-    color: #fff;
-    text-transform: uppercase;
-    background-color: transparent;
-    padding: 6px 28px;
-    border: 1px solid #FFFFFF;
-    border-radius: 3px;
-    line-height: 15px;
-    margin-right: 8px;
-    cursor: pointer;
-    transition: all ease .3s 0s;
-
-    &:hover {
-      background: #FFFFFF;
-      border: 1px solid #FFFFFF; 
-      color: #1C1C1C;
-    }
-  }
-
-  &__phone {
-    font-size: 16px;
-    line-height: 18px;
-    @extend %ubuntu-bold;
-  }
+  z-index: $z-index-header;
 }
 
-.menu {
-  &__list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    &>* {
-      &:not(:last-child) {
-        margin-right: 20px;
-      }
-    }
-
-  }
-
-  &__list-item {}
+.header__left {
+  width: 60%;
+}
+.header__right {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
 }

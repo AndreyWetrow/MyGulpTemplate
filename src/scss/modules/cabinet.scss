@@ -1,0 +1,27 @@
+.cabinet {
+  display: flex;
+  align-items: center;
+}
+.cabinet__avatar {
+  margin-left: auto;
+  img {
+    margin-bottom: 1.5rem;
+  }
+}
+.cabinet__form {
+  // flex: auto;
+  width: 340px;
+}
+
+.cabinet__file {
+  font-size: 1.4rem;
+  color: $blue;
+  cursor: pointer;
+  text-decoration: underline;
+  input {
+    display: none;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}

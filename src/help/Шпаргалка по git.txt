@@ -2,6 +2,8 @@
 ///////////////////////
 и мhttps://github.com/AndreyWetrow/ItDoctor
 1. git config --list - покажет глобальную конфигурацию с алиасами
+2. git clone - клонирование репозитория с сети
+3. git clone ....... ./ - клонирование в текущую папку (в конце точка через пробел)
 
 2. git remote add origin git@github.com:AndreyWetrow/ItDoctor.git
    git push -u origin master (добавление файлов в новый репозиторий)
@@ -14,8 +16,7 @@
    git push -u origin master
    ) 
 
-3. git clone - клонирование репозитория с сети
-3. git clone ....... ./ - клонирование в текущую папку
+
 
 4 алиас - log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'
 

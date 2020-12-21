@@ -1,18 +1,10 @@
 // bower подключения:
 // bower install fotorama
-// bower i selectize
-// bower install --save slick-carousel
-// bower install animate.css --save
-// bower install simplebar нет min.js сам скачал и вставил
-// bower install magnific-popup
-
-// npm i jquery-validation
 
 //cmd//cd /d и просто перетащить папку
 
 //npm i -g npm-check-updates - плагин npm-check-updates позволяет находить самые последние версии зависимостей, объявленных в package.json, и независимо от каких либо ограничений версий.
-
-//Потом, перед иницииализацией - ncu (просто проверка package.json на обновления), если есть что обновлять тогда ncu -u (это использование плагина npm-check-updates)
+// -потом, перед иницииализацией - ncu (просто проверка package.json на обновления), если есть что обновлять тогда ncu -u (это использование плагина npm-check-updates)
 
 //Инициализация проекта: npm i
 //Для запуска скрипта из package.json: npm run (Имя скрипта)
@@ -22,6 +14,7 @@
 
 // Проблемы
 // npm rebuild node-sass решил проблему с node-sass
+// npm rebuild - решил проблемму с компиляцией картинок (ничего не помагало)!!!!!!!
 
 const gulp = require("gulp");
 const concat = require("gulp-concat");
@@ -38,8 +31,6 @@ const smartgrid = require("smart-grid");
 //Конец Smartgrid
 const cheerio = require("gulp-cheerio");
 const imagemin = require("gulp-imagemin");
-// const plumber = require('gulp-plumber'); //Для вывода ошибок
-// const coffee = require('gulp-coffee');
 const replace = require("gulp-replace");
 const svgSprite = require("gulp-svg-sprite");
 const svgmin = require("gulp-svgmin");
@@ -82,10 +73,6 @@ let webConfig = {
   },
   mode: isDev ? "development" : "production",
   devtool: isDev ? "eval-source-map" : "none",
-  // watch: true,
-  // module: {
-  //   rules: [{ test: /\.css$/, loader: "style!css" }],
-  // },
 };
 
 // let cssFiles = [
@@ -176,8 +163,8 @@ function styles() {
 // }
 function scripts() {
   return gulp
-    .src("./src/js/script.js") 
-    .pipe(webpack(webConfig)) 
+    .src("./src/js/script.js")
+    .pipe(webpack(webConfig))
     .pipe(gulp.dest("./build/js"))
     .pipe(gulpif(isSync, browserSync.stream()));
 }
@@ -205,8 +192,8 @@ function images() {
     .pipe(
       imagemin([
         imagemin.gifsicle({ interlaced: true }),
-        imagemin.mozjpeg({ quality: 75, progressive: true }), // перестал выдавать ошибку и с ним сжимает больше
-        imagemin.optipng({ optimizationLevel: 3 }),
+        imagemin.mozjpeg({ quality: 80, progressive: true }), // перестал выдавать ошибку и с ним сжимает больше
+        imagemin.optipng({ optimizationLevel: 5 }),
       ])
     )
     .pipe(gulp.dest("./build/images"))
@@ -300,7 +287,16 @@ function svg() {
 function totalSvg() {
   return gulp
     .src("./src/img/totalSvg/**/*.svg")
-    .pipe(svgo())
+    .pipe(
+      // svgo({
+      //   plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+      // })
+      imagemin([
+        imagemin.svgo({
+          plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+        }),
+      ])
+    )
     .pipe(gulp.dest("./build/images"))
     .pipe(gulpif(isSync, browserSync.stream()));
 }

@@ -1,5 +1,8 @@
 # MyGulpTemplate
 Gulp template
+21.12.20
+Удалил библиотеки
+После BrainClouds
 
 07.12.20
 Сборка gulp + webpack по уроку Лаврика на YouTube
