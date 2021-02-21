@@ -14,7 +14,7 @@
 
 // Проблемы
 // npm rebuild node-sass решил проблему с node-sass
-// npm rebuild - решил проблемму с компиляцией картинок (ничего не помагало)!!!!!!!
+// npm rebuild - решил проблемму с компиляцией картинок (ничего не помогало)!!!!!!!
 
 const gulp = require("gulp");
 const concat = require("gulp-concat");
@@ -95,10 +95,10 @@ let webConfig = {
 // ];
 
 function html() {
-  return gulp
-    .src("./src/*.html")
-    .pipe(gulp.dest("./build"))
-    .pipe(gulpif(isSync, browserSync.stream()));
+  // return gulp
+  //   .src("./src/*.html")
+  //   .pipe(gulp.dest("./build"))
+  //   .pipe(gulpif(isSync, browserSync.stream()));
 }
 
 function htmlPug() {
@@ -110,7 +110,7 @@ function htmlPug() {
           pretty: true,
         })
       )
-      // .pipe(webphtml())
+      .pipe(webphtml())
       .pipe(gulp.dest("./build"))
       .pipe(gulpif(isSync, browserSync.stream()))
   );

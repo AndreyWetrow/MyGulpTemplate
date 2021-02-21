@@ -12,18 +12,22 @@ html.no-scroll(lang="ru-RU")
     <![endif]-->
     meta(name="viewport" content="width=device-width,initial-scale=1")
     meta(name="keywords" content="") 
-    link(rel="stylesheet" type='text/css' href="css/style.css")
-
     <!--[if lt IE 9]>
     script(src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js")
+    
     <![endif]-->
+    link(rel="stylesheet" type='text/css' href="css/style.css")
+    //- link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
   body(class = pageClass)
-    .page
-      include ../modules/header/header
-      include ../modules/sidebar
-      .main
-        .container
-          block content
-    include ../modules/popups/popups
+    .wrapper
+      include ../modules/header/header 
+      main.page
+        block content
+      include ../modules/footer/footer
+    //- .mainslider__body
+    //-   .swiper-wrapper
+    //-     .slide.slide1
+    //-     .slide.slide2
+    //-     .slide.slide3
     block script
     script(src="js/all.js")

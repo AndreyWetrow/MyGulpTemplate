@@ -1,87 +1,664 @@
-.stories
-  .stories__item
-    img.stories__preview(src="images/stories/stories-1.jpg")
-    .stories__title Отдыхаю на природе
-    time.stories__date(datetime="2020-09-21 19:21") 21.09.2020
-  .stories__item
-    img.stories__preview(src="images/stories/stories-2.jpg")
-    .stories__title Заканчиваю сложный проект
-    time.stories__date(datetime="2020-09-21 19:21") 21.09.2020
-  .stories__item
-    img.stories__preview(src="images/stories/stories-3.jpg")
-    .stories__title Переехал в новую квартиру
-    time.stories__date(datetime="2020-09-21 19:21") 21.09.2020
-  .stories__item
-    img.stories__preview(src="images/stories/stories-4.jpg")
-    .stories__title Осень пришла!
-    time.stories__date(datetime="2020-09-21 19:21") 21.09.2020
-.add-post
-  form.add-post__form(action="/" method="post")
-    textarea.add-post__textarea(name="post-text" placeholder="Напишите что-нибудь")
-    .add-post__form-actions
-      label.add-post__file(for="add-post-file")
-        input(type='file' id="add-post-file")
-      button.add-post__send(type="submit")
-        img(src="images/send.svg" alt="Отправить")
-.post
-  .post__content
-    p.post__description Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic itaque tempore, deserunt assumenda unde quo fugiat quae ipsa rem distinctio! Quasi provident sapiente, molestiae quo cum dicta incidunt perspiciatis repellendus ipsam assumenda a id repudiandae atque excepturi, non reprehenderit? At.
-  .post__footer
-    ul.post__data
-      li.post__data-item
-        time(datetime="2020-06-10 12:12") 10.06.2020
-article.post
-  .post__header.post__header--preview
-    a(href="post.html")
-      img(src="images/post-2.jpg" alt="Как писать код быстро и безболезненно?")
-  .post__content
-    h2.post__title
-      a(href="post.html") Как писать код быстро и безболезненно?
-    p.post__description Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic itaque tempore, deserunt assumenda unde quo fugiat quae ipsa rem distinctio! Quasi provident sapiente, molestiae quo cum dicta incidunt perspiciatis repellendus ipsam assumenda a id repudiandae atque excepturi, non reprehenderit? At.
-  .post__footer
-    ul.post__data
-      li.post__data-item
-        time(datetime="2020-06-10 12:12") 10.06.2020
-      li.post__data-item
-        a(href="post.html") Создание сайтов
-    a.post__read(href="post.html") читать
-article.post
-  .post__header
-    .embed
-      <iframe src="https://www.youtube.com/embed/iqHWbmihYJA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  .post__content
-    h2.post__title
-      a(href="post.html") Купил новый ноутбук за 150 000 руб
-  .post__footer
-    ul.post__data
-      li.post__data-item
-        time(datetime="2020-06-10 12:12") 10.06.2020
-      li.post__data-item
-        a(href="post.html") продвижение видео
-    a.post__read(href="#") оставить комментарий
-article.post
-  .post__header.post__header--preview
-    a(href="post.html")
-      img(src="images/post-3.jpg" alt="Как я сходил на FrontEnd Conf 2021")
-  .post__content
-    h2.post__title
-      a(href="post.html") Как я сходил на FrontEnd Conf 2021
-    p.post__description Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic itaque tempore, deserunt assumenda unde quo fugiat quae ipsa rem distinctio! Quasi provident sapiente, molestiae quo cum dicta incidunt perspiciatis repellendus ipsam assumenda a id repudiandae atque excepturi, non reprehenderit? At.
-  .post__footer
-    ul.post__data
-      li.post__data-item
-        time(datetime="2020-06-21 14:12") 21.06.2020
-      li.post__data-item
-        a(href="#") Конференция
-    a.post__read(href="post.html") читать
-ul.pagination
-  li.pagination__item
-    a.pagination__link(href="#") &lt
-  li.pagination__item
-    a.pagination__link(href="#") 1
-  li.pagination__item
-    a.pagination__link.active(href="#") 2
-  li.pagination__item
-    a.pagination__link(href="#") 3
-  li.pagination__item
-    a.pagination__link(href="#") &gt
+.page__container._container
+  aside.page__side
+    nav.page__menu.menu-page
+      .menu-page__content
+        .menu-page__header
+          .menu-page__title Каталог товаров
+          .menu-page__burger
+            .menu-page__lines
+              span
+              span
+              span
+        .menu-page__body
+          ul.menu-page__list
+            li.menu-page__parent
+              a(href="#").menu-page__link Беговые дорожки
+              .menu-page__submenu.submenu-page
+                .submenu-page__item
+                  ul.submenu-page__menu
+                    li
+                      a.submenu-page__link(href="#") Всепогодный
+                    li
+                      a.submenu-page__link(href="#") Для помещений
+                    li
+                      a.submenu-page__link(href="#") Профессиональный
+                    li
+                      a.submenu-page__link(href="#") Любительский
+                  .submenu-page__product
+                    .item-product
+                      .item-product__labels
+                      a.item-product__image(href="#")
+                        img(src="images/products/01.png", alt="Тенисный стол. Зеленый")
+                      .item-product__body
+                        a.item-product__title(href="#") Домашний теннисный стол Donic Indoor Roller 800 Green
+                        .item-product__footer
+                          a.item-product__add(href="#")
+                          .item-product__price.rub 64 990
+            li.menu-page__parent
+              a(href="#").menu-page__link Эллиптические тренажеры
+              .menu-page__submenu.submenu-page
+                .submenu-page__item
+                  ul.submenu-page__menu
+                    li
+                      a.submenu-page__link(href="#") Всепогодный
+                    li
+                      a.submenu-page__link(href="#") Для помещений
+                    li
+                      a.submenu-page__link(href="#") Профессиональный
+                    li
+                      a.submenu-page__link(href="#") Любительский
+                  .submenu-page__product
+                    .item-product
+                      .item-product__labels
+                        .item-product__label Товар дня
+                      a.item-product__image(href="#")
+                        img(src="images/products/01.png", alt="Тенисный стол. Зеленый")
+                      .item-product__body
+                        a.item-product__title(href="#") Домашний теннисный стол Donic Indoor Roller 800 Green
+                        .item-product__footer
+                          a.item-product__add(href="#")
+                          .item-product__price.rub 64 990
+            li
+              a(href="#").menu-page__link Велотренажеры
+            li
+              a(href="#").menu-page__link Гребные тренажеры
+            li
+              a(href="#").menu-page__link Вибромассажеры
+            li.menu-page__parent
+              a(href="#").menu-page__link Теннисные столы
+              .menu-page__submenu.submenu-page
+                .submenu-page__item
+                  ul.submenu-page__menu
+                    li
+                      a.submenu-page__link(href="#") Всепогодный
+                    li
+                      a.submenu-page__link(href="#") Для помещений
+                    li
+                      a.submenu-page__link(href="#") Профессиональный
+                    li
+                      a.submenu-page__link(href="#") Любительский
+                  .submenu-page__product
+                    .item-product
+                      .item-product__labels
+                      a.item-product__image(href="#")
+                        img(src="images/products/01.png", alt="Тенисный стол. Зеленый")
+                      .item-product__body
+                        a.item-product__title(href="#") Домашний теннисный стол Donic Indoor Roller 800 Green
+                        .item-product__footer
+                          .item-product__old-price.rub 64 990
+                          a.item-product__add(href="#")
+                          .item-product__price.rub 64 990
+            li
+              a(href="#").menu-page__link Баскетбол
+            li.menu-page__parent
+              a(href="#").menu-page__link Массажные кресла
+              .menu-page__submenu.submenu-page
+                .submenu-page__item
+                  ul.submenu-page__menu
+                    li
+                      a.submenu-page__link(href="#") Всепогодный
+                    li
+                      a.submenu-page__link(href="#") Для помещений
+                    li
+                      a.submenu-page__link(href="#") Профессиональный
+                    li
+                      a.submenu-page__link(href="#") Любительский
+                  .submenu-page__product
+                    .item-product
+                      .item-product__labels
+                        .item-product__label Товар дня
+                      a.item-product__image(href="#")
+                        img(src="images/products/01.png", alt="Тенисный стол. Зеленый")
+                      .item-product__body
+                        a.item-product__title(href="#") Домашний теннисный стол Donic Indoor Roller 800 Green
+                        .item-product__footer
+                          .item-product__old-price.rub 64 990
+                          a.item-product__add(href="#")
+                          .item-product__price.rub 64 990
+            li
+              a(href="#").menu-page__link Массажные столы
+            li
+              a(href="#").menu-page__link Силовые тренажеры
+            li
+              a(href="#").menu-page__link Батуты
+            li
+              a(href="#").menu-page__link Детские городки
+            li
+              a(href="#").menu-page__link Дачная мебель
+            li
+              a(href="#").menu-page__link Уличные спортивные комплексы
+            li
+              a(href="#").menu-page__link Аксессуары
+    .page__content-side(data-da=".page__content,992,last")
+      .page__news-side.news-side
+        a(href="#").news-side__title.side-title Новости
+        .news-side__items
+          .news-side__item
+            a(href="#").news-side__label Снижение цен на игровые площадки Jungle Gym
+            .news-side__body
+              .news-side__data #[span 01] дек
+              .news-side__text Уважаемые покупатели! Мы рады сообщить вам о снижении цены с 27 июля на детский игровой комплекс
+          .news-side__item
+            a(href="#").news-side__label Поступление батутов Eclipse!
+            .news-side__body 
+              .news-side__data #[span 03] дек
+              .news-side__text Уважаемые покупатели! Мы рады сообщить вам о снижении цены с 27 июля на детский игровой комплекс 
+      .page__reviews-side.reviews-side
+        a(href="#").reviews-side__title.side-title Отзывы 
+        .reviews-side__items
+          a(href="#").reviews-side__item
+            .reviews-side__header
+              .reviews-side__user Вася Иванов
+              .reviews-side__data 12.04.98
+            .reviews-side__body Ради экономии места в тренажерном зале приобрел многофункциональный силовой тренажер Life Gear. За такую небольшую стоимость и с такими возможностями, он просто не заменим. 
+          a(href="#").reviews-side__item
+            .reviews-side__header
+              .reviews-side__user Степан Николаевич
+              .reviews-side__data 12.04.98
+            .reviews-side__body Ради экономии места в тренажерном зале приобрел многофункциональный силовой тренажер Life Gear. За такую небольшую стоимость и с такими возможностями, он просто не заменим. 
+  .page__content
+    form.page__search.search-page(action="#" method="method")
+      .search-page__select
+        .search-page__title 
+          span Везде
+          span.search-page__quantity(data-text="Выбрано:") 
+        .search-page__categories.categories-search
+          .categories-search__row
+            .categories-search__column
+              ul.categories-search__list
+                li
+                  label.categories-search__checkbox.checkbox
+                    input.checkbox__input(type="checkbox")
+                    span.checkbox__text
+                      span Беговые дорожки
+                li
+                  label.categories-search__checkbox.checkbox
+                    input.checkbox__input(type="checkbox")
+                    span.checkbox__text
+                      span Эллиптические тренажеры
+                li
+                  label.categories-search__checkbox.checkbox
+                    input.checkbox__input(type="checkbox")
+                    span.checkbox__text
+                      span Велотренажеры
+                li
+                  label.categories-search__checkbox.checkbox
+                    input.checkbox__input(type="checkbox")
+                    span.checkbox__text
+                      span Гребные тренажеры
+                li
+                  label.categories-search__checkbox.checkbox
+                    input.checkbox__input(type="checkbox")
+                    span.checkbox__text
+                      span Вибромассажеры
+            .categories-search__column
+              ul.categories-search__list
+                li
+                  label.categories-search__checkbox.checkbox
+                    input.checkbox__input(type="checkbox")
+                    span.checkbox__text
+                      span Беговые дорожки
+                li
+                  label.categories-search__checkbox.checkbox
+                    input.checkbox__input(type="checkbox")
+                    span.checkbox__text
+                      span Эллиптические тренажеры
+                li
+                  label.categories-search__checkbox.checkbox
+                    input.checkbox__input(type="checkbox")
+                    span.checkbox__text
+                      span Велотренажеры
+                li
+                  label.categories-search__checkbox.checkbox
+                    input.checkbox__input(type="checkbox")
+                    span.checkbox__text
+                      span Гребные тренажеры
+                li
+                  label.categories-search__checkbox.checkbox
+                    input.checkbox__input(type="checkbox")
+                    span.checkbox__text
+                      span Вибромассажеры
+            .categories-search__column
+              ul.categories-search__list
+                li
+                  label.categories-search__checkbox.checkbox
+                    input.checkbox__input(type="checkbox")
+                    span.checkbox__text
+                      span Беговые дорожки
+                li
+                  label.categories-search__checkbox.checkbox
+                    input.checkbox__input(type="checkbox")
+                    span.checkbox__text
+                      span Эллиптические тренажеры
+                li
+                  label.categories-search__checkbox.checkbox
+                    input.checkbox__input(type="checkbox")
+                    span.checkbox__text
+                      span Велотренажеры
+                li
+                  label.categories-search__checkbox.checkbox
+                    input.checkbox__input(type="checkbox")
+                    span.checkbox__text
+                      span Гребные тренажеры
+                li
+                  label.categories-search__checkbox.checkbox
+                    input.checkbox__input(type="checkbox")
+                    span.checkbox__text
+                      span Вибромассажеры
+      .search-page__input
+        input.input(type="text")
+      button.search-page__btn.btn(type="submit") Найти
+    .page__slider.mainslider
+      .mainslider__body._swiper.swiper-container
+        .mainslider__wrapper.swiper-wrapper
+          .mainslider__slide.swiper-slide
+            .mainslider__content.content-mainslider
+              .content-mainslider__title
+                span Мега
+                p распродажа
+              .content-mainslider__text.text-mainslider
+                p.text-mainslider__por
+                  span.text-mainslider__text-1 Успей купить
+                  span тренажеры
+                p.text-mainslider__text-2 по старой цене
+                p до их
+                  span.text-mainslider__text-3 повышения
+              .content-mainslider__footer
+                .content-mainslider__price.rub от 45 000
+                a(href="#").content-mainslider__button
+                  span Подробнее
+            .mainslider__image._ibg
+              img(src="images/mainslider/01.jpg", alt="alt")
+          .mainslider__slide.swiper-slide
+            .mainslider__content.content-mainslider
+              .content-mainslider__title
+                span Мега
+                p распродажа
+              .content-mainslider__text.text-mainslider
+                p.text-mainslider__por
+                  span.text-mainslider__text-1 Успей купить
+                  span тренажеры
+                p.text-mainslider__text-2 по старой цене
+                p до их
+                  span.text-mainslider__text-3 повышения
+              .content-mainslider__footer
+                .content-mainslider__price.rub от 45 000
+                a(href="#").content-mainslider__button
+                  span Подробнее
+            .mainslider__image._ibg
+              img(src="images/mainslider/02.jpg", alt="alt")
+          .mainslider__slide.swiper-slide
+            .mainslider__content.content-mainslider
+              .content-mainslider__title
+                span Мега
+                p распродажа
+              .content-mainslider__text.text-mainslider
+                p.text-mainslider__por
+                  span.text-mainslider__text-1 Успей купить
+                  span тренажеры
+                p.text-mainslider__text-2 по старой цене
+                p до их
+                  span.text-mainslider__text-3 повышения
+              .content-mainslider__footer
+                .content-mainslider__price.rub от 45 000
+                a(href="#").content-mainslider__button
+                  span Подробнее
+            .mainslider__image._ibg
+              img(src="images/mainslider/01.jpg", alt="alt")
+        .mainslider__dots
+    .page__products.products-slider
+      .products-slider__header
+        .products-slider__title Популярные товары
+        .products-slider__control
+          .products-slider__arrow.products-slider__arrow-prev._arrow._arrow_prev
+          .products-slider__info
+          .products-slider__arrow.products-slider__arrow-next._arrow._arrow_next
+      .products-slider__item._swiper.swiper-container
+        .swiper-wrapper
+          .products-slider__slide.swiper-slide
+            .products-slider__items.items-products
+              .items-products__column
+                .item-product
+                  .item-product__labels
+                  a.item-product__image(href="#")
+                    img(src="images/products/02.png", alt="Тенисный стол. Зеленый")
+                  .item-product__body
+                    a.item-product__title(href="#") #[span BH Fitness F1 G6414V BH Fitness F1 G6414V BH Fitness F1 G6414V] Беговая дорожка
+                    .item-product__footer
+                      .item-product__old-price.rub 64 990
+                      a.item-product__add(href="#")
+                      .item-product__price.rub 64 990
+                  .item-product__hover.hover-item-product
+                    a(href="#").hover-item-product__title #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .hover-item-product__options.options-item-product
+                      .options-item-product__item
+                        .options-item-product__label Тип беговой дорожки:
+                        .options-item-product__value Электрическая
+                      .options-item-product__item
+                        .options-item-product__label Скорость движения (км/ч):
+                        .options-item-product__value 22
+                      .options-item-product__item
+                        .options-item-product__label Складывание:
+                        .options-item-product__value Есть
+                    .hover-item-product__body
+                      a.hover-item-product__cart
+                    .hover-item-product__footer
+                      .hover-item-product__old-price.rub 66 990
+                      .hover-item-product__stock в наличии
+                      .hover-item-product__price.rub 64 990
+              .items-products__column
+                .item-product
+                  .item-product__labels
+                  a.item-product__image(href="#")
+                    img(src="images/products/02.png", alt="Тенисный стол. Зеленый")
+                  .item-product__body
+                    a.item-product__title(href="#") #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .item-product__footer 
+                      a.item-product__add(href="#")
+                      .item-product__price.rub 64 990
+                  .item-product__hover.hover-item-product
+                    a(href="#").hover-item-product__title #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .hover-item-product__options.options-item-product
+                      .options-item-product__item
+                        .options-item-product__label Тип беговой дорожки:
+                        .options-item-product__value Электрическая
+                      .options-item-product__item
+                        .options-item-product__label Скорость движения (км/ч):
+                        .options-item-product__value 22
+                      .options-item-product__item
+                        .options-item-product__label Складывание:
+                        .options-item-product__value Есть
+                    .hover-item-product__body
+                      a.hover-item-product__cart
+                    .hover-item-product__footer 
+                      .hover-item-product__stock в наличии
+                      .hover-item-product__price.rub 64 990
+              .items-products__column
+                .item-product
+                  .item-product__labels
+                  a.item-product__image(href="#")
+                    img(src="images/products/02.png", alt="Тенисный стол. Зеленый")
+                  .item-product__body
+                    a.item-product__title(href="#") #[span BH Fitness F1 G6414V BH Fitness F1 G6414V BH Fitness F1 G6414V] Беговая дорожка
+                    .item-product__footer
+                      .item-product__old-price.rub 64 990
+                      a.item-product__add(href="#")
+                      .item-product__price.rub 64 990
+                  .item-product__hover.hover-item-product
+                    a(href="#").hover-item-product__title #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .hover-item-product__options.options-item-product
+                      .options-item-product__item
+                        .options-item-product__label Тип беговой дорожки:
+                        .options-item-product__value Электрическая
+                      .options-item-product__item
+                        .options-item-product__label Скорость движения (км/ч):
+                        .options-item-product__value 22
+                      .options-item-product__item
+                        .options-item-product__label Складывание:
+                        .options-item-product__value Есть
+                    .hover-item-product__body
+                      a.hover-item-product__cart
+                    .hover-item-product__footer
+                      .hover-item-product__old-price.rub 66 990
+                      .hover-item-product__stock в наличии
+                      .hover-item-product__price.rub 64 990
+              .items-products__column
+                .item-product
+                  .item-product__labels
+                  a.item-product__image(href="#")
+                    img(src="images/products/02.png", alt="Тенисный стол. Зеленый")
+                  .item-product__body
+                    a.item-product__title(href="#") #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .item-product__footer 
+                      a.item-product__add(href="#")
+                      .item-product__price.rub 64 990
+                  .item-product__hover.hover-item-product
+                    a(href="#").hover-item-product__title #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .hover-item-product__options.options-item-product
+                      .options-item-product__item
+                        .options-item-product__label Тип беговой дорожки:
+                        .options-item-product__value Электрическая
+                      .options-item-product__item
+                        .options-item-product__label Скорость движения (км/ч):
+                        .options-item-product__value 22
+                      .options-item-product__item
+                        .options-item-product__label Складывание:
+                        .options-item-product__value Есть
+                    .hover-item-product__body
+                      a.hover-item-product__cart
+                    .hover-item-product__footer 
+                      .hover-item-product__stock в наличии
+                      .hover-item-product__price.rub 64 990
+              .items-products__column
+                .item-product
+                  .item-product__labels
+                  a.item-product__image(href="#")
+                    img(src="images/products/02.png", alt="Тенисный стол. Зеленый")
+                  .item-product__body
+                    a.item-product__title(href="#") #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .item-product__footer
+                      .item-product__old-price.rub 64 990
+                      a.item-product__add(href="#")
+                      .item-product__price.rub 64 990
+                  .item-product__hover.hover-item-product
+                    a(href="#").hover-item-product__title #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .hover-item-product__options.options-item-product
+                      .options-item-product__item
+                        .options-item-product__label Тип беговой дорожки:
+                        .options-item-product__value Электрическая
+                      .options-item-product__item
+                        .options-item-product__label Скорость движения (км/ч):
+                        .options-item-product__value 22
+                      .options-item-product__item
+                        .options-item-product__label Складывание:
+                        .options-item-product__value Есть
+                    .hover-item-product__body
+                      a.hover-item-product__cart
+                    .hover-item-product__footer
+                      .hover-item-product__old-price.rub 66 990
+                      .hover-item-product__stock в наличии
+                      .hover-item-product__price.rub 64 990
+              .items-products__column
+                .item-product
+                  .item-product__labels
+                  a.item-product__image(href="#")
+                    img(src="images/products/02.png", alt="Тенисный стол. Зеленый")
+                  .item-product__body
+                    a.item-product__title(href="#") #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .item-product__footer
+                      .item-product__old-price.rub 64 990
+                      a.item-product__add(href="#")
+                      .item-product__price.rub 64 990
+                  .item-product__hover.hover-item-product
+                    a(href="#").hover-item-product__title #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .hover-item-product__options.options-item-product
+                      .options-item-product__item
+                        .options-item-product__label Тип беговой дорожки:
+                        .options-item-product__value Электрическая
+                      .options-item-product__item
+                        .options-item-product__label Скорость движения (км/ч):
+                        .options-item-product__value 22
+                      .options-item-product__item
+                        .options-item-product__label Складывание:
+                        .options-item-product__value Есть
+                    .hover-item-product__body
+                      a.hover-item-product__cart
+                    .hover-item-product__footer
+                      .hover-item-product__old-price.rub 66 990
+                      .hover-item-product__stock в наличии
+                      .hover-item-product__price.rub 64 990
+          .products-slider__slide.swiper-slide
+            .products-slider__items.items-products
+              .items-products__column
+                .item-product
+                  .item-product__labels
+                  a.item-product__image(href="#")
+                    img(src="images/products/02.png", alt="Тенисный стол. Зеленый")
+                  .item-product__body
+                    a.item-product__title(href="#") #[span BH Fitness F1 G6414V BH Fitness F1 G6414V BH Fitness F1 G6414V] Беговая дорожка
+                    .item-product__footer
+                      .item-product__old-price.rub 64 990
+                      a.item-product__add(href="#")
+                      .item-product__price.rub 64 990
+                  .item-product__hover.hover-item-product
+                    a(href="#").hover-item-product__title #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .hover-item-product__options.options-item-product
+                      .options-item-product__item
+                        .options-item-product__label Тип беговой дорожки:
+                        .options-item-product__value Электрическая
+                      .options-item-product__item
+                        .options-item-product__label Скорость движения (км/ч):
+                        .options-item-product__value 22
+                      .options-item-product__item
+                        .options-item-product__label Складывание:
+                        .options-item-product__value Есть
+                    .hover-item-product__body
+                      a.hover-item-product__cart
+                    .hover-item-product__footer
+                      .hover-item-product__old-price.rub 66 990
+                      .hover-item-product__stock в наличии
+                      .hover-item-product__price.rub 64 990
+              .items-products__column
+                .item-product
+                  .item-product__labels
+                  a.item-product__image(href="#")
+                    img(src="images/products/02.png", alt="Тенисный стол. Зеленый")
+                  .item-product__body
+                    a.item-product__title(href="#") #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .item-product__footer 
+                      a.item-product__add(href="#")
+                      .item-product__price.rub 64 990
+                  .item-product__hover.hover-item-product
+                    a(href="#").hover-item-product__title #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .hover-item-product__options.options-item-product
+                      .options-item-product__item
+                        .options-item-product__label Тип беговой дорожки:
+                        .options-item-product__value Электрическая
+                      .options-item-product__item
+                        .options-item-product__label Скорость движения (км/ч):
+                        .options-item-product__value 22
+                      .options-item-product__item
+                        .options-item-product__label Складывание:
+                        .options-item-product__value Есть
+                    .hover-item-product__body
+                      a.hover-item-product__cart
+                    .hover-item-product__footer 
+                      .hover-item-product__stock в наличии
+                      .hover-item-product__price.rub 64 990
+              .items-products__column
+                .item-product
+                  .item-product__labels
+                  a.item-product__image(href="#")
+                    img(src="images/products/02.png", alt="Тенисный стол. Зеленый")
+                  .item-product__body
+                    a.item-product__title(href="#") #[span BH Fitness F1 G6414V BH Fitness F1 G6414V BH Fitness F1 G6414V] Беговая дорожка
+                    .item-product__footer
+                      .item-product__old-price.rub 64 990
+                      a.item-product__add(href="#")
+                      .item-product__price.rub 64 990
+                  .item-product__hover.hover-item-product
+                    a(href="#").hover-item-product__title #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .hover-item-product__options.options-item-product
+                      .options-item-product__item
+                        .options-item-product__label Тип беговой дорожки:
+                        .options-item-product__value Электрическая
+                      .options-item-product__item
+                        .options-item-product__label Скорость движения (км/ч):
+                        .options-item-product__value 22
+                      .options-item-product__item
+                        .options-item-product__label Складывание:
+                        .options-item-product__value Есть
+                    .hover-item-product__body
+                      a.hover-item-product__cart
+                    .hover-item-product__footer
+                      .hover-item-product__old-price.rub 66 990
+                      .hover-item-product__stock в наличии
+                      .hover-item-product__price.rub 64 990
+              .items-products__column
+                .item-product
+                  .item-product__labels
+                  a.item-product__image(href="#")
+                    img(src="images/products/02.png", alt="Тенисный стол. Зеленый")
+                  .item-product__body
+                    a.item-product__title(href="#") #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .item-product__footer 
+                      a.item-product__add(href="#")
+                      .item-product__price.rub 64 990
+                  .item-product__hover.hover-item-product
+                    a(href="#").hover-item-product__title #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .hover-item-product__options.options-item-product
+                      .options-item-product__item
+                        .options-item-product__label Тип беговой дорожки:
+                        .options-item-product__value Электрическая
+                      .options-item-product__item
+                        .options-item-product__label Скорость движения (км/ч):
+                        .options-item-product__value 22
+                      .options-item-product__item
+                        .options-item-product__label Складывание:
+                        .options-item-product__value Есть
+                    .hover-item-product__body
+                      a.hover-item-product__cart
+                    .hover-item-product__footer 
+                      .hover-item-product__stock в наличии
+                      .hover-item-product__price.rub 64 990
+              .items-products__column
+                .item-product
+                  .item-product__labels
+                  a.item-product__image(href="#")
+                    img(src="images/products/02.png", alt="Тенисный стол. Зеленый")
+                  .item-product__body
+                    a.item-product__title(href="#") #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .item-product__footer
+                      .item-product__old-price.rub 64 990
+                      a.item-product__add(href="#")
+                      .item-product__price.rub 64 990
+                  .item-product__hover.hover-item-product
+                    a(href="#").hover-item-product__title #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .hover-item-product__options.options-item-product
+                      .options-item-product__item
+                        .options-item-product__label Тип беговой дорожки:
+                        .options-item-product__value Электрическая
+                      .options-item-product__item
+                        .options-item-product__label Скорость движения (км/ч):
+                        .options-item-product__value 22
+                      .options-item-product__item
+                        .options-item-product__label Складывание:
+                        .options-item-product__value Есть
+                    .hover-item-product__body
+                      a.hover-item-product__cart
+                    .hover-item-product__footer
+                      .hover-item-product__old-price.rub 66 990
+                      .hover-item-product__stock в наличии
+                      .hover-item-product__price.rub 64 990
+              .items-products__column
+                .item-product
+                  .item-product__labels
+                  a.item-product__image(href="#")
+                    img(src="images/products/02.png", alt="Тенисный стол. Зеленый")
+                  .item-product__body
+                    a.item-product__title(href="#") #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .item-product__footer
+                      .item-product__old-price.rub 64 990
+                      a.item-product__add(href="#")
+                      .item-product__price.rub 64 990
+                  .item-product__hover.hover-item-product
+                    a(href="#").hover-item-product__title #[span BH Fitness F1 G6414V] Беговая дорожка
+                    .hover-item-product__options.options-item-product
+                      .options-item-product__item
+                        .options-item-product__label Тип беговой дорожки:
+                        .options-item-product__value Электрическая
+                      .options-item-product__item
+                        .options-item-product__label Скорость движения (км/ч):
+                        .options-item-product__value 22
+                      .options-item-product__item
+                        .options-item-product__label Складывание:
+                        .options-item-product__value Есть
+                    .hover-item-product__body
+                      a.hover-item-product__cart
+                    .hover-item-product__footer
+                      .hover-item-product__old-price.rub 66 990
+                      .hover-item-product__stock в наличии
+                      .hover-item-product__price.rub 64 990
+include page-brands
+include page-text
+include ../../modules/sections/page-info

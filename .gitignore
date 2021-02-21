@@ -5,8 +5,10 @@
 *.log
 *.pdf
 *.psd
-*.sublime 
+*.sublime
 Thumbs.db
 package-lock.json
 /node_modules
 /build
+/src/img
+/src/fonts/copyFonts

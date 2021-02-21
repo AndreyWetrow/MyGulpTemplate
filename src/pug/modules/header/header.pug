@@ -1,28 +1,62 @@
 header.header
-  .header__left
-    .nav
-      ul.nav__list
-        li.nav__item
-          a.nav__link(href="index.html") Главная
-        li.nav__item
-          a.nav__link.has-subnav(href="") Статьи
-          ul.subnav
+  .header__top.top-header
+    .top-header__content._container
+      .top-header__column
+        .top-header__menu.menu
+          .menu__icon.icon-menu
+            span
+            span
+            span
+          nav.menu__body
+            ul.menu__list
+              li
+                a.menu__link(href="#") Бренды
+              li
+                a.menu__link(href="#") Распродажа
+              li
+                a.menu__link(href="#") Доставка и Сборка
+              li
+                a.menu__link(href="#") Гарантия
+              li
+                a.menu__link(href="#") Оплата
+              li
+                a.menu__link(href="#") Контакты
+      .top-header__column.top-header__column_logo
+        a.top-header__logo(href="#")
+          img(src="images/logo.png", alt="alt")
+      .top-header__column
+        .top-header__contacts.contacts-header
+          .contacts-header__column
+            .contacts-header__item.contacts-header__item_icon
+              .contacts-header__label Москва
+              a.contacts-header__phone(href="tel:84991234567") 8-499-123-45-67
+          .contacts-header__column.top-header__column_forcart
+            .contacts-header__item.contacts-header__item_second-phone
+              .contacts-header__label Бесплатно для России
+              a.contacts-header__phone(href="tel:88001234567") 8-800-123-45-67
+  .header__bottom.bottom-header
+    .bottom-header__content._container
+      .bottom-header__row
+        .bottom-header__column
+          ul.bottom-header__actions.actions-header(data-da=".menu__body,640,0")
             li
-              a.subnav__link(href="#") Создание сайтов
+              a.actions-header__item.actions-header__item_login(href="#")
+                span Вход
             li
-              a.subnav__link(href="#") Интернет-маркетинг
+              a.actions-header__item.actions-header__item_reg(href="#")
+                span Регистрация
             li
-              a.subnav__link(href="#") Продвижение видео
-        li.nav__item
-          a.nav__link(href="text.html") Обо мне
-        li.nav__item
-          a.nav__link(href="text.html") Реклама
-  .header__right
-    .nav
-      ul.nav__list
-        li.nav__item
-          a.nav__link(href="profile.html") Профиль
-        li.nav__item
-          a.nav__link(href="signin.html") Выйти
-    form.search(action="search.html" method="get")
-      input.search__input(type="text" placeholder="Поиск по блогу")
+              a.actions-header__item.actions-header__item_mail(href="mailto:sport@gmail.com")
+                span sport@gmail.com
+        .bottom-header__column
+          .bottom-header__info.info-header
+            .info-header__column
+              a.info-header__callback(href="#" data-da=".menu__body,640,3")
+                span Обратный звонок
+            .info-header__column
+              a.info-header__schedule(href="#")
+                p #[span Пн–Пт:] 09:00–21:00;
+                p #[span Сб–Вс:] 10:00–20:00 
+            .info-header__column
+              a.info-header__cart(href="#" data-da=".top-header__column_forcart,640,3")
+                span 12

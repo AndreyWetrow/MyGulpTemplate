@@ -1,0 +1,30 @@
+.breadcrumbs {
+  overflow-x: auto;
+  margin-bottom: 20px;
+  height: 20px;
+  // .breadcrumbs__list
+  &__list {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    li {
+      padding-right: 20px;
+      margin-right: 10px;
+      background: url("../images/icons/li_arrow.png") right / 10px no-repeat;
+      &:last-child {
+        background: none;
+        margin-right: 0;
+      }
+    }
+  }
+  // .breadcrumbs__link
+  &__link {
+    color: #1ab9ce;
+    text-decoration: underline;
+  }
+  // .breadcrumbs__item
+  &__item {
+    color: #999;
+    font-weight: 300;
+  }
+}
