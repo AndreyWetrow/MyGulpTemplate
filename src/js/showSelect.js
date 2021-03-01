@@ -22,7 +22,7 @@ const getTemplateShow = (data = [], placeholder, selectedId) => {
     </ul>
   </div>
   `;
-}
+};
 
 class SelectShow {
   constructor(selector, options) {
@@ -37,15 +37,18 @@ class SelectShow {
 
   render() {
     const { placeholder, data } = this.options;
-
-    this.$el.classList.add("selectShow");
-    this.$el.innerHTML = getTemplateShow(data, placeholder, this.selectedId);
+    if (this.$el) {
+      this.$el.classList.add("selectShow");
+      this.$el.innerHTML = getTemplateShow(data, placeholder, this.selectedId);
+    }
   }
 
   setup() {
     this.clickHandler = this.clickHandler.bind(this);
-    this.$el.addEventListener("click", this.clickHandler);
-    this.$value = this.$el.querySelector('[data-type="value"]');
+    if (this.$el) {
+      this.$el.addEventListener("click", this.clickHandler);
+      this.$value = this.$el.querySelector('[data-type="value"]');
+    }
   }
 
   clickHandler(event) {
@@ -97,4 +100,4 @@ class SelectShow {
   }
 }
 
-export {getTemplateShow, SelectShow}
+export { getTemplateShow, SelectShow };

@@ -22,7 +22,7 @@ const getTemplate = (data = [], placeholder, selectedId) => {
     </ul>
   </div>
   `;
-}
+};
 
 class Select {
   constructor(selector, options) {
@@ -37,13 +37,17 @@ class Select {
   render() {
     const { placeholder, data } = this.options;
 
-    this.$el.classList.add("select");
-    this.$el.innerHTML = getTemplate(data, placeholder, this.selectedId);
+    if (this.$el) {
+      this.$el.classList.add("select");
+      this.$el.innerHTML = getTemplate(data, placeholder, this.selectedId);
+    }
   }
 
   setup() {
     this.clickHandler = this.clickHandler.bind(this);
-    this.$el.addEventListener("click", this.clickHandler);
+    if (this.$el) {
+      this.$el.addEventListener("click", this.clickHandler);
+    }
     this.$value = document.querySelector('[data-type="value"]');
   }
 
@@ -96,4 +100,4 @@ class Select {
   }
 }
 
-export {getTemplate, Select}
+export { getTemplate, Select };

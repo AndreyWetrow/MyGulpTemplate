@@ -373,7 +373,7 @@ function watch() {
   gulp.watch("./src/scss/**/*.scss", styles);
   gulp.watch("./src/libs/**/*", gulp.parallel(styles, scripts));
   gulp.watch("./src/**/*.html", html);
-  gulp.watch("./src/**/*.pug", htmlPug);
+  gulp.watch("./src/pug/**/*.pug", htmlPug);
   gulp.watch("./src/js/**/*.js", scripts);
   // gulp.watch("./src/img/**/*.{png,jpg}", images);
   gulp.watch(
