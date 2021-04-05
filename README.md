@@ -1,5 +1,10 @@
 # MyGulpTemplate
 Gulp template
+04.04.21 
+- Добавил import html файлов
+- довел до ума webp import в html и css
+- добавил min.css
+- изменил sprite.svg
 
 06.03.21
 Чистый шаблон для запуска

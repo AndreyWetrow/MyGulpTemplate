@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
-
+// @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
 // 100 – Thin || Hairline
 // 200 – Extra Light || Ultra Light || Thin
 // 300 – Light
@@ -12,8 +12,16 @@
 
 // font-display: swap; можно использовать в @font-face!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-@include font("UniSans", "UniSansHeavyCAPS", "400", "normal");
-@include font("Play", "Play-Bold", "400", "normal");
+// @include font("UniSans", "UniSansHeavyCAPS", "400", "normal");
+// @include font("Play", "Play-Bold", "400", "normal");
+
+@include font("SFPro", "SFProDisplay-Regular", "400", "normal");
+@include font("SFPro", "SFProDisplay-Medium", "500", "normal");
+@include font("SFPro", "SFProDisplay-Semibold", "600", "normal");
+@include font("SFPro", "SFProDisplay-Bold", "700", "normal");
+
+// font-family: 'Barlow', sans-serif;
+
 // @font-face {
 //   font-family: 'Uni Sans Heavy CAPS Heavy CAPS';
 //   src: url('../fonts/UniSansHeavyCAPS.eot');

@@ -3,28 +3,35 @@
 
 // .reset();
 
-@import "_variables";
-@import "_mixins";
-@import "../../node_modules/normalize.css/normalize";
+// @import "_variables";
+// @import "_mixins";
+// @import "../../node_modules/normalize.css/normalize";
 // @import "_fonts";
-@import "_core";
-@import "_libs";
-@import "_ui";
-// @import "../libs/slick-carousel/slick/slick.scss";
-// @import "../libs/slick-carousel/slick/slick-theme.scss";
+// @import "_core";
+// @import "_libs";
+// @import "_ui";
 
+
+
+
+@import "modules/header/header";
+// @import "modules/footer/footer";
+// @import "modules/pages/catalog";
+// @import "modules/pages/product";
+// @import "modules/sections/banner-section";
+// @import "modules/sections/categories";
+// @import "modules/sections/search";
+// @import "modules/sections/products";
+// @import "modules/sections/product-popular";
+// @import "modules/small-blocks/small-blocks";
 // @import "modules/index-main/page";
 // @import "modules/catalog-main/catalog";
 // @import "modules/checkout/checkout";
 // @import "modules/index-main/slider";
 // @import "modules/index-main/news-side";
-// @import "modules/header/header";
 // @import "modules/product-main/product";
-// @import "modules/sections/brands-slider";
 // @import "modules/sections/products-slider";
-// @import "modules/small-blocks/pagination";
 // @import "modules/small-blocks/breadcrumbs";
-// @import "modules/footer/footer";
 // @import "modules/index-main/add-post";
 // @import "modules/forms/form";
 // @import "modules/forms/search";

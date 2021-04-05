@@ -1,1 +1,14 @@
-@import "btn";
+@import "breadcrumbs";
+
+
+.tabs-content {
+  display: none;
+}
+.tabs-content--active {
+  display: block;
+}
+
+.price {
+  font-family: 'Barlow', sans-serif;
+  position: relative;
+}
