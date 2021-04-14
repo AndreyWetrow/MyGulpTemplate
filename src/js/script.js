@@ -25,12 +25,11 @@ import "./addClassWebp.js";
 // $(function(){});
 // =============Jquery end==================
 
-let test = {
-  name: "Vasja",
-};
-let test1 = {
-  name: { html: "index" },
-};
+// import './assets/css/main.css';
 
-console.log(test.name);
-console.log(test1.name.html);
+// import Swiper from "swiper";
+// import 'swiper/swiper-bundle.css';
+
+window.addEventListener("load", function () {
+   console.log(123);
+});

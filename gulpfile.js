@@ -9,13 +9,15 @@
 //Инициализация проекта: npm i
 //Для запуска скрипта из package.json: npm run (Имя скрипта)
 //Для сжатия картинок лучше использовать сайт https://tinypng.com/
-// . npm init -y - это формирование базового package.json в проекте по умолчанию.
+// . npm init -y - это формирование базового package.json в проекте по умолчанию (-y - это ответ "да" на все вопросы).
 // npm i webpack webpack-cli webpack-dev-server -D - установка webpack (Лаврик продвинутый курс программистов)
 
 // Проблемы
 // npm rebuild node-sass решил проблему с node-sass
 // npm rebuild - решил проблемму с компиляцией картинок (ничего не помогало)!!!!!!!
-// WEBP-CSS выдает ошибку если в названии файла картинки есть пробелы и/или кириллица
+// WEBP-CSS выдает ошибку если в названии файла картинки есть пробелы и/или кириллица или нет названия картинки
+// Error: Cannot find module 'webp-converter/cwebp' - решение npm install webp-converter@2.2.3 --save-dev
+// Может не запуститься из-за проблемм в адресе.
 
 // надо посмотреть плагин lazysizes
 
@@ -68,17 +70,33 @@ let webConfig = {
   output: {
     filename: "all.js",
   },
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.js$/,
+  //       loader: "babel-loader",
+  //       exclude: "/node_modules/",
+  //     },
+  //   ],
+  // },
+  // Изменил после курса Лаврика
   module: {
     rules: [
       {
         test: /\.js$/,
-        loader: "babel-loader",
         exclude: "/node_modules/",
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
       },
     ],
   },
   mode: isDev ? "development" : "production",
-  devtool: isDev ? "eval-source-map" : "none",
+  // devtool: isDev ? "eval-source-map" : "none",
+  devtool: isDev ? "eval-cheap-module-source-map" : "none",
 };
 
 // let cssFiles = [

@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  color: $mainColor;
+  // color: $mainColor;
   min-width: 320px;
   overflow-x: hidden;
   font-size: 20px;
@@ -94,7 +94,7 @@ input[type="radio"].visually-hidden {
 //   width: 100%;
 // }
 .container {
-  max-width: $maxWidthContainer + px;
+  // max-width: $maxWidthContainer + px;
   margin: 0 auto;
   padding: 0 15px;
   @media (max-width: 640px) {
@@ -132,7 +132,7 @@ input[type="radio"].visually-hidden {
   transition: all 0.3s ease 0s;
   font-size: 12px;
   font-weight: 900;
-  color: $white;
+  // color: $white;
   text-transform: uppercase;
   cursor: pointer;
   @media (min-width: 992px) {
@@ -169,5 +169,4 @@ input[type="radio"].visually-hidden {
   display: flex !important;
   justify-content: center;
   align-items: center;
-}
-
+} 

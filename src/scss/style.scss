@@ -3,18 +3,18 @@
 
 // .reset();
 
-// @import "_variables";
+@import "_variables";
 // @import "_mixins";
 // @import "../../node_modules/normalize.css/normalize";
 // @import "_fonts";
-// @import "_core";
-// @import "_libs";
+@import "_core";
+@import "_libs";
 // @import "_ui";
 
 
 
 
-@import "modules/header/header";
+// @import "modules/header/header";
 // @import "modules/footer/footer";
 // @import "modules/pages/catalog";
 // @import "modules/pages/product";
