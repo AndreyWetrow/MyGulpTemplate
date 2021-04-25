@@ -96,6 +96,7 @@ let webConfig = {
   },
   mode: isDev ? "development" : "production",
   // devtool: isDev ? "eval-source-map" : "none",
+  // возможно none нужно исправить на false (были проблемы в продвинутом курсе Лаврика) 
   devtool: isDev ? "eval-cheap-module-source-map" : "none",
 };
 
