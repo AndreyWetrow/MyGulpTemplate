@@ -1,2 +1,31 @@
-.form { 
+.form-input {
+  display: block;
+  background-color: $dark;
+  border: 1px solid lighten($dark, 7);
+  padding: 12px 18px;
+  min-width: 280px;
+  color: #fff;
+  font-size: 15px;
+  transition: border .3s ease 0s;
+  &:focus {
+    border: 1px solid lighten($dark, 20);
+  }
+}
+
+.modal {
+  // .modal__content
+  &__content {
+  }
+  // .modal__input
+  &__input {
+    margin-bottom: 8px;
+  }
+  // .modal__footer
+  &__footer {
+   text-align: center;
+  }
+}
+
+textarea.form-input {
+  min-height: 100px;
 }
